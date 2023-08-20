@@ -200,8 +200,6 @@ async def eight_ball(ctx):
 with open("Python/BOT/token.txt") as file:
     os.system("clear")
     # This reads the file containing the discord bot's token.
-    # The log_handler perameter prevents the discord bot from logging
-    # to terminal by its self allowing me to add custom logging.
 
     client.run(file.read())
 
