@@ -69,6 +69,7 @@ async def calculator(ctx):
 
     try:
         number_1 = int(number_1.content)
+
     except:
         await ctx.send(f"{ctx.author.mention}: That's not a number yo..")
         return
@@ -85,6 +86,7 @@ async def calculator(ctx):
 
     try:
         number_2 = int(number_2.content)
+
     except:
         await ctx.send(f"{ctx.author.mention}: That's not a number yo..")
         return
@@ -176,6 +178,7 @@ async def ping(ctx):
 async def eight_ball(ctx):
 
     # NOTE:
+
     # The question parameter for commands referes to a question
     # passed through the command and is in string format; I don't use it here, thus mentioning it to remember it.
     # The astrix is used by discord to include all following words as the question.
