@@ -206,7 +206,3 @@ with open("Python/BOT/token.txt") as file:
 # NOTE:
 
 # My Sister harriet helped me with some spelling, so she.. "deserves" some credit.
-
-# TODO:
-
-# Get around to cogs harris ya lazy (*word that should not be said, nor have been created by man here*)!
