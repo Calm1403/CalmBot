@@ -205,7 +205,3 @@ with open("Python/BOT/token.txt") as file:
     # This reads the file containing the discord bot's token.
 
     client.run(file.read())
-
-# NOTE:
-
-# My Sister harriet helped me with some spelling, so she.. "deserves" some credit.
