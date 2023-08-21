@@ -166,6 +166,10 @@ async def info(ctx):
         name="$calculator:", value="[Alias: $calc] This asks CalmBot to assist you with simple math sums."
     )
 
+    embeded_message.add_field(
+        name="$pokemon:", value="[Alias: $poke] This asks CalmBot to use the pokeAPI to provide you with information about a specific pokemon."
+    )
+
     await ctx.send(embed=embeded_message)
 
 
