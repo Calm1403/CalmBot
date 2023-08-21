@@ -80,6 +80,7 @@ async def pokemon(ctx):
 
     if found == True:
         await ctx.send(f"{ctx.author.mention}: {info_url}")
+        # TODO: Turn this into actually readable information.
 
     else:
         await ctx.send(f"{ctx.author.mention}: Sorry, I couldn't find that pokemon..")
