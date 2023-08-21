@@ -1,8 +1,10 @@
 from discord.ext import commands, tasks
 from colorama import Fore as F
 from itertools import cycle
+import requests
 import discord
 import random
+import json
 import os
 
 client = commands.Bot(command_prefix="$",
@@ -60,6 +62,27 @@ async def on_message(message):
     if message.content == "https://youtu.be/dQw4w9WgXcQ":
         await message.delete()
         await channel.send(f"{message.author.mention}: Nope! No rick-rolling while I'm in town!")
+
+
+@client.command(aliases=["poke"])
+async def pokemon(ctx):
+    count = 0
+    request = requests.get("https://pokeapi.co/api/v2/pokemon/")
+    request_json = request.json()["results"]
+
+    await ctx.send(f"{ctx.author.mention}: Enter the name of your pokemon!")
+    required = await client.wait_for("message")
+
+    for dictionary in request_json:
+        if dictionary["name"] == required.content:
+            found = dictionary["url"]
+            count += 1
+
+    if count > 0:
+        await ctx.send(f"{ctx.author.mention}: Here ya go: {found}")
+
+    else:
+        await ctx.send(f"{ctx.author.mention}: Sorry, I couldn't find that pokemon..")
 
 
 @client.command(aliases=["calc"])
