@@ -78,6 +78,8 @@ async def pokemon(ctx):
             found = dictionary["url"]
             count += 1
 
+            break
+
     if count > 0:
         await ctx.send(f"{ctx.author.mention}: Here ya go: {found}")
 
