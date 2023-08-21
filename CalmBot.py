@@ -66,7 +66,7 @@ async def on_message(message):
 
 @client.command(aliases=["poke"])
 async def pokemon(ctx):
-    count = 0
+    found = False
     request = requests.get("https://pokeapi.co/api/v2/pokemon/")
     request_json = request.json()["results"]
 
@@ -75,13 +75,11 @@ async def pokemon(ctx):
 
     for dictionary in request_json:
         if dictionary["name"] == required.content:
-            found = dictionary["url"]
-            count += 1
-
+            info_url, found = dictionary["url"], True
             break
 
-    if count > 0:
-        await ctx.send(f"{ctx.author.mention}: Here ya go: {found}")
+    if found == True:
+        await ctx.send(f"{ctx.author.mention}: {info_url}")
 
     else:
         await ctx.send(f"{ctx.author.mention}: Sorry, I couldn't find that pokemon..")
