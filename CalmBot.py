@@ -66,12 +66,16 @@ async def on_message(message):
 
 @client.command(aliases=["poke"])
 async def pokemon(ctx):
+
+    def check(m):
+        return m.author == ctx.author
+
     found = False
     request = requests.get("https://pokeapi.co/api/v2/pokemon/")
     request_json = request.json()["results"]
 
     await ctx.send(f"{ctx.author.mention}: Enter the name of your pokemon!")
-    required = await client.wait_for("message")
+    required = await client.wait_for("message", check=check)
 
     for dictionary in request_json:
         if dictionary["name"] == required.content:
@@ -89,8 +93,11 @@ async def pokemon(ctx):
 @client.command(aliases=["calc"])
 async def calculator(ctx):
 
+    def check(m):
+        return m.author == ctx.author
+
     await ctx.send(f"{ctx.author.mention}: Enter your first number!")
-    number_1 = await client.wait_for("message")
+    number_1 = await client.wait_for("message", check=check)
 
     try:
         number_1 = int(number_1.content)
@@ -100,14 +107,14 @@ async def calculator(ctx):
         return
 
     await ctx.send(f"{ctx.author.mention}: Enter your operator!")
-    operator = await client.wait_for("message")
+    operator = await client.wait_for("message", check=check)
 
     if operator.content not in ("*", "/", "+", "-"):
         await ctx.send(f"{ctx.author.mention}: That's not an operator yo..")
         return
 
     await ctx.send(f"{ctx.author.mention}: Enter your second number!")
-    number_2 = await client.wait_for("message")
+    number_2 = await client.wait_for("message", check=check)
 
     try:
         number_2 = int(number_2.content)
