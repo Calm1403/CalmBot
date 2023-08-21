@@ -47,7 +47,8 @@ async def on_ready():
     # This begins the bot's status cycle process.
 
     print(
-        f"\n~~~ The CalmBot has become {F.GREEN}fully{F.RESET} active! ~~~\n")
+        f"\n~~~ The CalmBot has become {F.GREEN}fully{F.RESET} active! ~~~\n"
+    )
 
 
 @client.event
