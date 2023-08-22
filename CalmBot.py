@@ -84,17 +84,44 @@ async def pokemon(ctx):
 
     if found == True:
         info_request = requests.get(info_url)
-        info_request_json = info_request.json()
         info_request_json_pngs = info_request.json()["sprites"]
+        info_request_json_stats = info_request.json()["stats"]
+
+        base_stat_array = []
+
+        for dictionary in info_request_json_stats:
+            base_stat_array.append(dictionary["base_stat"])
 
         embeded_message = discord.Embed(
-            title=f"Pokemon: {required.content}", description=f"This will give you all of the information regarding {required.content}!")
+            title=f"Pokemon: {required.content.lower()}", description=f"This will give you all of the information regarding {required.content.lower()}!", colour=discord.Colour.dark_gray())
 
-        embeded_message = embeded_message.set_thumbnail(
+        embeded_message.set_thumbnail(
             url=info_request_json_pngs["front_default"])
 
+        embeded_message.add_field(
+            name="Base health:", value=f"The pokemon {required.content.lower()} has a base health of {base_stat_array[0]}.")
+
+        embeded_message.add_field(
+            name="Base attack:", value=f"The pokemon {required.content.lower()} has a base attack of {base_stat_array[1]}."
+        )
+
+        embeded_message.add_field(
+            name="Base defense:", value=f"The pokemon {required.content.lower()} has a base defense of {base_stat_array[2]}."
+        )
+
+        embeded_message.add_field(
+            name="Base special attack:", value=f"The pokemon {required.content.lower()} has a base special attack of {base_stat_array[3]}."
+        )
+
+        embeded_message.add_field(
+            name="Base special defense:", value=f"The pokemon {required.content.lower()} has a base special defense of {base_stat_array[4]}."
+        )
+
+        embeded_message.add_field(
+            name="Base speed:", value=f"The pokemon {required.content.lower()} has a base speed of: {base_stat_array[5]}."
+        )
+
         await ctx.send(embed=embeded_message)
-        # TODO: Turn this into actually readable information.
 
     else:
         await ctx.send(f"{ctx.author.mention}: Sorry, I couldn't find that pokemon..")
