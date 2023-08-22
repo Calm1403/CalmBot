@@ -184,7 +184,7 @@ async def calculator(ctx):
 @client.command(aliases=["help"])
 async def info(ctx):
     embeded_message = discord.Embed(
-        title="About CalmBot:", description="This message will tell you the information regarding CalmBot.", colour=discord.Colour.dark_gray())
+        title="About CalmBot:", description="This message will give you all of the information regarding CalmBot!", colour=discord.Colour.dark_gray())
 
     embeded_message.set_thumbnail(
         url=ctx.guild.icon
