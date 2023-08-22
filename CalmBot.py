@@ -78,12 +78,22 @@ async def pokemon(ctx):
     required = await client.wait_for("message", check=check)
 
     for dictionary in request_json:
-        if dictionary["name"] == required.content:
+        if dictionary["name"] == required.content.lower():
             info_url, found = dictionary["url"], True
             break
 
     if found == True:
-        await ctx.send(f"{ctx.author.mention}: {info_url}")
+        info_request = requests.get(info_url)
+        info_request_json = info_request.json()
+        info_request_json_pngs = info_request.json()["sprites"]
+
+        embeded_message = discord.Embed(
+            title=f"Pokemon: {required.content}", description=f"This will give you all of the information regarding {required.content}!")
+
+        embeded_message = embeded_message.set_thumbnail(
+            url=info_request_json_pngs["front_default"])
+
+        await ctx.send(embed=embeded_message)
         # TODO: Turn this into actually readable information.
 
     else:
