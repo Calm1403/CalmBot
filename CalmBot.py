@@ -222,7 +222,7 @@ async def info(ctx):
 # The parameter aliases intakes a list of strings to be used as ways of calling the command function.
 async def hello(ctx):
     # The ctx perameter referes to the context of the conversation between
-    # the person calling the bot and the bot itself and is always required.
+    # the person calling the bot and the bot itself and is always required in a command function.
     with open("Python/BOT/greetings.txt") as random_greetings_file:
         random_greetings_list = []
 
@@ -249,7 +249,6 @@ async def ping(ctx):
 
 @client.command(aliases=["8ball"])
 async def eight_ball(ctx):
-
     # NOTE:
 
     # The question parameter for commands referes to a question
