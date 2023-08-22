@@ -118,7 +118,7 @@ async def pokemon(ctx):
         )
 
         embeded_message.add_field(
-            name="Base speed:", value=f"The pokemon {required.content.lower()} has a base speed of: {base_stat_array[5]}."
+            name="Base speed:", value=f"The pokemon {required.content.lower()} has a base speed of {base_stat_array[5]}."
         )
 
         await ctx.send(ctx.author.mention, embed=embeded_message)
