@@ -121,7 +121,7 @@ async def pokemon(ctx):
             name="Base speed:", value=f"The pokemon {required.content.lower()} has a base speed of: {base_stat_array[5]}."
         )
 
-        await ctx.send(embed=embeded_message)
+        await ctx.send(ctx.author.mention, embed=embeded_message)
 
     else:
         await ctx.send(f"{ctx.author.mention}: Sorry, I couldn't find that pokemon..")
@@ -214,7 +214,7 @@ async def info(ctx):
         name="$pokemon:", value="[Alias: $poke] This asks CalmBot to use the pokeAPI to provide you with information about a specific pokemon."
     )
 
-    await ctx.send(embed=embeded_message)
+    await ctx.send(ctx.author.mention, embed=embeded_message)
 
 
 @client.command(aliases=["hi"])
