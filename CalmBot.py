@@ -254,7 +254,7 @@ async def eight_ball(ctx):
 
     # The question parameter for commands referes to a question
     # passed through the command and is in string format; I don't use it here, thus mentioning it to remember it.
-    # The astrix is used by discord to include all following words as the question.
+    # When the astrix symbol is passed through a command that recieves a question it tells discord include all following words as the question.
     # I'm not too sure what discord does with the astrix, but I do know it's used to instantiate a key
     # arguments parameter and unpack lists in other cases.
 
