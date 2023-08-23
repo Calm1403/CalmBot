@@ -249,6 +249,7 @@ async def ping(ctx):
 
 @client.command(aliases=["8ball"])
 async def eight_ball(ctx):
+
     # NOTE:
 
     # The question parameter for commands referes to a question
@@ -256,6 +257,12 @@ async def eight_ball(ctx):
     # The astrix is used by discord to include all following words as the question.
     # I'm not too sure what discord does with the astrix, but I do know it's used to instantiate a key
     # arguments parameter and unpack lists in other cases.
+
+    def check(m):
+        return m.author == ctx.author
+
+    await ctx.send(f"{ctx.author.mention}: Hey, ask me a yes or no question!")
+    question = await client.wait_for("message", check=check)
 
     with open("Python/BOT/responses.txt") as random_responses_file:
         random_responses_list = []
@@ -269,8 +276,7 @@ async def eight_ball(ctx):
 
         random_response = random.choice(random_responses_list)
 
-    await ctx.send(f"{ctx.author.mention}: {random_response}")
-
+    await ctx.send(f"{ctx.author.mention}: \"{question.content}\" -- {random_response}")
 
 with open("Python/BOT/token.txt") as file:
     os.system("clear")
