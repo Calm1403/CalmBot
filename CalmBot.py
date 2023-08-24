@@ -21,7 +21,6 @@ client_status = cycle(
     ]
 )
 
-
 # The cycle class creates a generator, which unlike that of an itterator, holds only one value at a
 # time until called upon again with the next() function, at which point will then hold the next value.
 
@@ -68,38 +67,66 @@ async def on_message(message):
 async def pokemon(ctx):
 
     def check(m):
+        # This function checks to see if the author of the 'wait_for' message is equal
+        # to the author of the context.
         return m.author == ctx.author
 
     found = False
     request = requests.get("https://pokeapi.co/api/v2/pokemon/")
+    # This makes a request to the pokemon API.
     request_json = request.json()["results"]
+    # This gets the response json data and focuses on the API-key named results.
 
     await ctx.send(f"{ctx.author.mention}: Enter the name of your pokemon!")
     required = await client.wait_for("message", check=check)
 
     for dictionary in request_json:
+        # For each dictionary in the result_json list.
         if dictionary["name"] == required.content.lower():
+            # If dictionary element of title 'name' is equal to the 'wait_for' message content in lower case.
             info_url, found = dictionary["url"], True
+            # Variable info_url is equal to the found dictionary element 'url' and variable found is equal to True
             break
+            # Break from loop to prevent itterating further after finding required pokemon.
 
     if found == True:
+        # If variable found is equal to True.
         info_request = requests.get(info_url)
+        # This makes a request to the found url.
         info_request_json_pngs = info_request.json()["sprites"]
+        # This gets the pokemon sprite json data.
         info_request_json_stats = info_request.json()["stats"]
+        # This gets the pokemon stat json data.
 
         base_stat_array = []
 
+        # This array is used to access each base stat.
+        # Position one refers to base health.
+        # Position two refers to base attack.
+        # Position three refers to base defence.
+        # Position four refers to base special attack.
+        # Position five refers to base special attack.
+        # Position six refers to base speed.
+
         for dictionary in info_request_json_stats:
+            # For each dictionary in the json_stats.
             base_stat_array.append(dictionary["base_stat"])
+            # Append dictionary base state element.
 
         embeded_message = discord.Embed(
-            title=f"Pokemon: {required.content.lower()}", description=f"This will give you all of the information regarding {required.content.lower()}!", colour=discord.Colour.dark_gray())
+            # This creates an embeded message.
+            title=f"Pokemon: {required.content.lower()}", description=f"This will give you all of the information regarding {required.content.lower()}!", colour=discord.Colour.dark_gray()
+        )
 
         embeded_message.set_thumbnail(
-            url=info_request_json_pngs["front_default"])
+            # This sets the embeded message's thumbnail.
+            url=info_request_json_pngs["front_default"]
+        )
 
         embeded_message.add_field(
-            name="Base health:", value=f"The pokemon {required.content.lower()} has a base health of {base_stat_array[0]}.")
+            # This adds a field to be added to the embeded message.
+            name="Base health:", value=f"The pokemon {required.content.lower()} has a base health of {base_stat_array[0]}."
+        )
 
         embeded_message.add_field(
             name="Base attack:", value=f"The pokemon {required.content.lower()} has a base attack of {base_stat_array[1]}."
@@ -122,8 +149,10 @@ async def pokemon(ctx):
         )
 
         await ctx.send(ctx.author.mention, embed=embeded_message)
+        # This sends the embeded message.
 
     else:
+        # Otherwise.
         await ctx.send(f"{ctx.author.mention}: Sorry, I couldn't find that pokemon..")
 
 
@@ -138,16 +167,21 @@ async def calculator(ctx):
 
     try:
         number_1 = int(number_1.content)
+        # If the number the bot recieved can't be converted to an int.
 
     except:
         await ctx.send(f"{ctx.author.mention}: That's not a number yo..")
+        # Send output "That's not a number yo.." to chat.
         return
+        # Return nothing to stop the bot during an active command.
 
     await ctx.send(f"{ctx.author.mention}: Enter your operator!")
     operator = await client.wait_for("message", check=check)
 
-    if operator.content not in ("*", "/", "+", "-"):
+    if operator.content not in ("*", "/", "+", "-", "%", "^"):
+        # If the operand the bot recieved is not in hard-coded tuple.
         await ctx.send(f"{ctx.author.mention}: That's not an operator yo..")
+        # Send output "That's not an operator yo.." to chat.
         return
 
     await ctx.send(f"{ctx.author.mention}: Enter your second number!")
@@ -161,9 +195,12 @@ async def calculator(ctx):
         return
 
     if operator.content == "*":
+        # If the entered operator is equal to astrix.
         output = number_1 * number_2
+        # Calculate output.
         await ctx.send(
             f"{ctx.author.mention}: {number_1} * {number_2} = {output}")
+        # Send output to display.
 
     elif operator.content == "+":
         output = number_1 + number_2
@@ -175,10 +212,24 @@ async def calculator(ctx):
         await ctx.send(
             f"{ctx.author.mention}: {number_1} - {number_2} = {output}")
 
+    elif operator.content == "%":
+        output = number_1 % number_2
+        await ctx.send(
+            f"{ctx.author.mention}: {number_1} % {number_2} = {output}")
+
+    elif operator.content == "^":
+        output = number_1 ^ number_2
+        await ctx.send(
+            f"{ctx.author.mention}: {number_1} ^ {number_2} = {output}"
+        )
+
     else:
+        # Else, during the event that the number the bot recieved is not equal to any of the other operators, but in the hard-coded tuple.
         output = number_1 / number_2
+        # Calculate only remaining operator.
         await ctx.send(
             f"{ctx.author.mention}: {number_1} / {number_2} = {output}")
+        # Send output to display.
 
 
 @client.command(aliases=["help"])
@@ -227,9 +278,9 @@ async def hello(ctx):
         random_greetings_list = []
 
         for element in random_greetings_file.readlines():
-            # For every element in the readlines() object:
+            # For every element in the readlines() object.
             if element.__contains__("\n"):
-                # If that element contains \n:
+                # If that element contains \n.
                 random_greetings_list.append(element[:-1])
                 # Append new element to random_greetings_list.
 
