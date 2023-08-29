@@ -16,6 +16,7 @@ class eight_ball(commands.Cog):
 
     @commands.command(aliases=["8ball"])
     async def eight_ball(self, ctx):
+        # This function will display a random response to a question.
 
         # NOTE:
 

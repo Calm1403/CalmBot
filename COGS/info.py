@@ -13,6 +13,7 @@ class info(commands.Cog):
 
     @commands.command(aliases=["help"])
     async def info(self, ctx):
+        # This command will display the information regarding the discord bot.
 
         embeded_message = discord.Embed(
             title="About CalmBot:", description="This message will give you all of the information regarding CalmBot!", colour=discord.Colour.dark_gray())

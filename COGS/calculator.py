@@ -15,6 +15,7 @@ class calculator(commands.Cog):
 
     @commands.command(aliases=["calc"])
     async def calculator(self, ctx):
+        # This function will, as the name suggests, will act like that of a simple calculator.
 
         def check(m):
             return m.author == ctx.author

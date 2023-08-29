@@ -14,6 +14,7 @@ class pokemon(commands.Cog):
 
     @commands.command(aliases=["poke"])
     async def pokemon(self, ctx):
+        # This function will use the pokemon API to display information regarding a certain pokemon.
 
         def check(m):
             # This function checks to see if the author of the 'wait_for' message is equal
@@ -106,4 +107,6 @@ class pokemon(commands.Cog):
 
 
 async def setup(client):
+    # When "loading" a cog, discord will check to see if there is a setup function to be used as a gateway into the cog.
     await client.add_cog(pokemon(client))
+    # Discord then adds the cog to be used using an instance of the cog class.
