@@ -16,9 +16,9 @@ class hello(commands.Cog):
     # This decorator will intake a function to be used as a discord command.
     # The parameter aliases intakes a list of strings to be used as ways of calling the command function.
     async def hello(self, ctx):
-        # This function will display a friendly greeting.
+        # This command will display a friendly greeting.
         # The ctx perameter referes to the context of the conversation between
-        # the person calling the bot and the bot itself and is always required in a command function.
+        # the person instanciating the bot command and the bot itself and is always required in a command function.
         with open("Python/BOT/COGS/greetings.txt") as random_greetings_file:
             random_greetings_list = []
 

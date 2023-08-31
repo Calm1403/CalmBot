@@ -102,7 +102,7 @@ class pokemon(commands.Cog):
             # This sends the embeded message.
 
         else:
-            # Otherwise.
+            # If the variable found is not equal to true:
             await ctx.send(f"{ctx.author.mention}: Sorry, I couldn't find that pokemon..")
 
 

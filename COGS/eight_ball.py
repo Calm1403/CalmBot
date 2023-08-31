@@ -20,9 +20,9 @@ class eight_ball(commands.Cog):
 
         # NOTE:
 
-        # The question parameter for commands referes to a question
+        # Sometimes in command functions, the question parameter for commands can be set and referes to a question
         # passed through the command and is in string format; I don't use it here, thus mentioning it to remember it.
-        # When the astrix symbol is passed through a command that recieves a question it tells discord include all following words as the question.
+        # When the astrix symbol is passed through a command that recieves a question it tells discord include all following words as the input question.
         # I'm not too sure what discord does with the astrix, but I do know it's used to instantiate a key
         # arguments parameter and unpack lists in other cases.
 

@@ -40,7 +40,7 @@ async def load():
         if filename.endswith(".py"):
             # If current file in loop ends with .py:
             await client.load_extension(f"COGS.{filename[:-3]}")
-            # Remove three characters off of the filename variable and read cog file.
+            # Remove three characters off of the filename variable and load cog file.
 
 
 async def main():
