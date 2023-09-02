@@ -21,23 +21,67 @@ class pokemon(commands.Cog):
             # to the author of the context.
             return m.author == ctx.author
 
+        await ctx.send(f"{ctx.author.mention}: Enter the name of your pokemon! :smile:")
+        required = await self.client.wait_for("message", check=check)
+        await ctx.send(f"{ctx.author.mention}: Aight, give me a sec to look for {required.content.lower()}..")
+
         found = False
-        request = requests.get("https://pokeapi.co/api/v2/pokemon/")
-        # This makes a request to the pokemon API.
-        request_json = request.json()["results"]
+        request_1 = requests.get(
+            "https://pokeapi.co/api/v2/pokemon/")
+
+        request_2 = requests.get(
+            "https://pokeapi.co/api/v2/pokemon/?offset=20&limit=20")
+
+        request_3 = requests.get(
+            "https://pokeapi.co/api/v2/pokemon/?offset=40&limit=20")
+
+        request_4 = requests.get(
+            "https://pokeapi.co/api/v2/pokemon/?offset=60&limit=20"
+        )
+
+        request_5 = requests.get(
+            "https://pokeapi.co/api/v2/pokemon/?offset=80&limit=20")
+
+        request_6 = requests.get(
+            "https://pokeapi.co/api/v2/pokemon/?offset=100&limit=20"
+        )
+
+        # These are the requests to the poke api; each being a list of dictionaries with elements containing various pokemon.
+
+        requests_in_json = [
+            request_1.json()["results"],
+            request_2.json()["results"],
+            request_3.json()["results"],
+            request_4.json()["results"],
+            request_5.json()["results"],
+            request_6.json()["results"]
+        ]
+
         # This gets the response json data and focuses on the API-key named results.
 
-        await ctx.send(f"{ctx.author.mention}: Enter the name of your pokemon!")
-        required = await self.client.wait_for("message", check=check)
-
-        for dictionary in request_json:
-            # For each dictionary in the result_json list.
-            if dictionary["name"] == required.content.lower():
-                # If dictionary element of title 'name' is equal to the 'wait_for' message content in lower case.
-                info_url, found = dictionary["url"], True
-                # Variable info_url is equal to the found dictionary element 'url' and variable found is equal to True
+        for request in requests_in_json:
+            if found == True:
+                # If found is equal to true break from loop to prevent searching through a different request
+                # even after the required pokemon has been found.
                 break
-                # Break from loop to prevent itterating further after finding required pokemon.
+
+            for dictionary in request:
+                # For each dictionary in the result_json list.
+                if dictionary["name"] == required.content.lower():
+                    # If dictionary element of title 'name' is equal to the 'wait_for' message content in lower case.
+                    info_url, found = dictionary["url"], True
+                    # Variable info_url is equal to the found dictionary element 'url' and variable found is equal to True
+                    break
+                    # Break from nested loop to prevent itterating further after finding required pokemon.
+
+        # NOTE to all my fellow programmer friends:
+
+        # Forgive me if this method of searching
+        # for pokemon is cringe, results
+        # in poor times, and is considered a warcrime against humanity.
+        # It was the only way I could think of searching for elements in a dictionary within a
+        # dictionary within a list haha..
+        # It's a temporary solution until I figure out a better strategy. :)
 
         if found == True:
             # If variable found is equal to True.
