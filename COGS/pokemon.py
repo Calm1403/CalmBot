@@ -52,7 +52,7 @@ class pokemon(commands.Cog):
                     break
                     # Break from nested loop to prevent itterating further after finding required pokemon.
 
-        # NOTE to all my fellow programmer friends:
+        # NOTE From: Calm1403 To: all my fellow programmer friends,
 
         # Forgive me if this method of searching
         # for pokemon is cringe, results
