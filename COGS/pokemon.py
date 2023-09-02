@@ -44,6 +44,19 @@ class pokemon(commands.Cog):
 
             requests.get(
                 f"https://pokeapi.co/api/v2/pokemon?offset=100&limit=20").json()["results"],
+
+            requests.get(
+                f"https://pokeapi.co/api/v2/pokemon?offset=120&limit=20").json()["results"],
+
+            requests.get(
+                f"https://pokeapi.co/api/v2/pokemon?offset=130&limit=20").json()["results"],
+
+            requests.get(
+                f"https://pokeapi.co/api/v2/pokemon?offset=140&limit=20").json()["results"],
+
+            requests.get(
+                f"https://pokeapi.co/api/v2/pokemon?offset=150&limit=20").json()["results"],
+
         ]
 
         found = False

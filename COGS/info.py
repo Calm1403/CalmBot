@@ -46,7 +46,7 @@ class info(commands.Cog):
             name="$pokemon:", value="[Alias: $poke] This asks CalmBot to use the pokeAPI to provide you with information about a specific pokemon."
         )
 
-        await ctx.send(ctx.author.mention, embed=embeded_message)
+        await ctx.send(f"{ctx.author.mention}: Here you are!", embed=embeded_message)
 
 
 async def setup(client):
