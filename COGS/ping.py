@@ -14,7 +14,7 @@ class ping(commands.Cog):
     @commands.command(aliases=["latency"])
     async def ping(self, ctx):
         # This command will get the discord bot's latency.
-        await ctx.send(f"{ctx.author.mention}: My latency is {int(self.client.latency * 1000)}ms.")
+        await ctx.send(f"{ctx.author.mention}: My latency is {int(self.client.latency * 1000)}ms. :thumbsup:")
 
 
 async def setup(client):

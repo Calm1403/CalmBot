@@ -44,7 +44,7 @@ class eight_ball(commands.Cog):
 
             random_response = random.choice(random_responses_list)
 
-        await ctx.send(f"{ctx.author.mention}: \"{question.content}\" -- {random_response}")
+        await ctx.send(f"{ctx.author.mention}: \"{question.content}\", {random_response}")
 
 
 async def setup(client):

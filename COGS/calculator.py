@@ -28,7 +28,7 @@ class calculator(commands.Cog):
             # If the number the bot recieved can't be converted to an int.
 
         except:
-            await ctx.send(f"{ctx.author.mention}: That's not a number yo..")
+            await ctx.send(f"{ctx.author.mention}: That's not a number yo.. :skull:")
             # Send output "That's not a number yo.." to chat.
             return
             # Return nothing to stop the bot during an active command.
@@ -38,7 +38,7 @@ class calculator(commands.Cog):
 
         if operator.content not in ("*", "/", "+", "-", "%", "^"):
             # If the operand the bot recieved is not in hard-coded tuple.
-            await ctx.send(f"{ctx.author.mention}: That's not an operator yo..")
+            await ctx.send(f"{ctx.author.mention}: That's not an operator yo.. :skull:")
             # Send output "That's not an operator yo.." to chat.
             return
 
@@ -49,7 +49,7 @@ class calculator(commands.Cog):
             number_2 = int(number_2.content)
 
         except:
-            await ctx.send(f"{ctx.author.mention}: That's not a number yo..")
+            await ctx.send(f"{ctx.author.mention}: That's not a number yo.. :skull:")
             return
 
         if operator.content == "*":
@@ -82,7 +82,7 @@ class calculator(commands.Cog):
             )
 
         else:
-            # Else, during the event that the number the bot recieved is not equal to any of the other operators, but in the hard-coded tuple.
+            # Else, during the event that the operator the bot recieved is not equal to any of the other operators, but in the hard-coded tuple.
             output = number_1 / number_2
             # Calculate only remaining operator.
             await ctx.send(
