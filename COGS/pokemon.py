@@ -25,40 +25,18 @@ class pokemon(commands.Cog):
         required = await self.client.wait_for("message", check=check)
         await ctx.send(f"{ctx.author.mention}: Aight, give me a sec to look for {required.content.lower()}..")
 
-        found = False
-        request_1 = requests.get(
-            "https://pokeapi.co/api/v2/pokemon/")
-
-        request_2 = requests.get(
-            "https://pokeapi.co/api/v2/pokemon/?offset=20&limit=20")
-
-        request_3 = requests.get(
-            "https://pokeapi.co/api/v2/pokemon/?offset=40&limit=20")
-
-        request_4 = requests.get(
-            "https://pokeapi.co/api/v2/pokemon/?offset=60&limit=20"
-        )
-
-        request_5 = requests.get(
-            "https://pokeapi.co/api/v2/pokemon/?offset=80&limit=20")
-
-        request_6 = requests.get(
-            "https://pokeapi.co/api/v2/pokemon/?offset=100&limit=20"
-        )
-
-        # These are the requests to the poke api; each being a list of dictionaries with elements containing various pokemon.
-
         requests_in_json = [
-            request_1.json()["results"],
-            request_2.json()["results"],
-            request_3.json()["results"],
-            request_4.json()["results"],
-            request_5.json()["results"],
-            request_6.json()["results"]
+            # This request is the first page of the pokeAPI.
+            requests.get(
+                "https://pokeapi.co/api/v2/pokemon/").json()["results"]
         ]
 
-        # This gets the response json data and focuses on the API-key named results.
+        for i in range(20, 1020, 20):
+            # This appends the various pokeAPI pages; there's a LOT.
+            requests_in_json.append(requests.get(
+                f"https://pokeapi.co/api/v2/pokemon?offset={i}&limit=20").json()["results"])
 
+        found = False
         for request in requests_in_json:
             if found == True:
                 # If found is equal to true break from loop to prevent searching through a different request
@@ -103,13 +81,13 @@ class pokemon(commands.Cog):
             # Position six refers to base speed.
 
             for dictionary in info_request_json_stats:
-                # For each dictionary in the json_stats.
+                # For each dictionary in the json_stats array.
                 base_stat_array.append(dictionary["base_stat"])
-                # Append dictionary base state element.
+                # Append dictionary base stat element.
 
             embeded_message = discord.Embed(
                 # This creates an embeded message.
-                title=f"Pokemon: {required.content.lower()}", description=f"This will give you all of the information regarding {required.content.lower()}!", colour=discord.Colour.dark_gray()
+                title=f"Pokemon:", description=f"This will give you all of the information regarding {required.content.lower()}!", colour=discord.Colour.dark_gray()
             )
 
             embeded_message.set_thumbnail(
@@ -142,7 +120,7 @@ class pokemon(commands.Cog):
                 name="Base speed:", value=f"The pokemon {required.content.lower()} has a base speed of {base_stat_array[5]}."
             )
 
-            await ctx.send(ctx.author.mention, embed=embeded_message)
+            await ctx.send(f"{ctx.author.mention}: Here you go!", embed=embeded_message)
             # This sends the embeded message.
 
         else:
