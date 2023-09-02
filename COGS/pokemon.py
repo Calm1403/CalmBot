@@ -26,15 +26,25 @@ class pokemon(commands.Cog):
         await ctx.send(f"{ctx.author.mention}: Aight, give me a sec to look for information about {required.content.lower()}..")
 
         requests_in_json = [
-            # This request is the first page of the pokeAPI.
             requests.get(
-                "https://pokeapi.co/api/v2/pokemon/").json()["results"]
-        ]
+                # This request is the first page of the pokeAPI.
+                "https://pokeapi.co/api/v2/pokemon/").json()["results"],
 
-        for i in range(20, 520, 20):
-            # This appends the various pokeAPI pages; there's a LOT.
-            requests_in_json.append(requests.get(
-                f"https://pokeapi.co/api/v2/pokemon?offset={i}&limit=20").json()["results"])
+            requests.get(
+                f"https://pokeapi.co/api/v2/pokemon?offset=20&limit=20").json()["results"],
+
+            requests.get(
+                f"https://pokeapi.co/api/v2/pokemon?offset=40&limit=20").json()["results"],
+
+            requests.get(
+                f"https://pokeapi.co/api/v2/pokemon?offset=80&limit=20").json()["results"],
+
+            requests.get(
+                f"https://pokeapi.co/api/v2/pokemon?offset=90&limit=20").json()["results"],
+
+            requests.get(
+                f"https://pokeapi.co/api/v2/pokemon?offset=100&limit=20").json()["results"],
+        ]
 
         found = False
         for request in requests_in_json:
