@@ -23,31 +23,31 @@ class info(commands.Cog):
         )
 
         embeded_message.add_field(
-            name="$info:", value="[Alias: $help] This asks CalmBot to say their avaliable commands and other information."
+            name="$info:", value="[Alias: $help] This asks CalmBot to say their avaliable commands and other information.", inline=True
         )
 
         embeded_message.add_field(
-            name="$hello:", value="[Alias: $hi] This asks CalmBot to say a (most of the time :shrug:) friendly greeting."
+            name="$hello:", value="[Alias: $hi] This asks CalmBot to say a (most of the time :shrug:) friendly greeting.", inline=True
         )
 
         embeded_message.add_field(
-            name="$eight_ball:", value="[Alias: $8ball] This asks CalmBot to say a yes or no response to a yes or no question."
+            name="$eight_ball:", value="[Alias: $8ball] This asks CalmBot to say a yes or no response to a yes or no question.", inline=True
         )
 
         embeded_message.add_field(
-            name="$ping:", value="[Alias: $latency] This asks CalmBot to say their current latency."
+            name="$ping:", value="[Alias: $latency] This asks CalmBot to say their current latency.", inline=True
         )
 
         embeded_message.add_field(
-            name="$calculator:", value="[Alias: $calc] This asks CalmBot to assist you with simple math sums."
+            name="$calculator:", value="[Alias: $calc] This asks CalmBot to assist you with simple math sums.", inline=True
         )
 
         embeded_message.add_field(
-            name="$send_fox:", value="[Alias: $fox] This asks CalmBot to display a cute fox."
+            name="$send_fox:", value="[Alias: $fox] This asks CalmBot to display a cute fox.", inline=True
         )
 
         embeded_message.add_field(
-            name="$send_dog:", value="[Aliases: $dog] Similar to that of the $send_fox command; this asks CalmBot to display a cute dog."
+            name="$send_dog:", value="[Aliases: $dog] Similar to that of the $send_fox command; this asks CalmBot to display a cute dog.", inline=True
         )
 
         await ctx.send(f"{ctx.author.mention}: Here you are!", embed=embeded_message)
