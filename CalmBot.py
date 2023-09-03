@@ -12,6 +12,7 @@ client = commands.Bot(command_prefix="$",
 # This decorator will intake a function to be exicuted during a specific event corrosponding to the name of the function it intakes.
 async def on_ready():
     # On discord bot ready
+    os.system("clear")
     print(
         f"~~~ The CalmBot has {F.GREEN}connected{F.RESET} to discord! ~~~"
     )
@@ -55,5 +56,13 @@ async def main():
         # Start discord bot using token variable containing the discord bot's token.
         await client.start(token)
 
-asyncio.run(main())
+try:
+    asyncio.run(main())
+
+except KeyboardInterrupt:
+    os.system("clear")
+    print(
+        f"~~~ The CalmBot has {F.RED}disconnected{F.RESET} from discord! ~~~"
+    )
+
 # Run the main function asyncronously.
