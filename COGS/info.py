@@ -19,7 +19,7 @@ class info(commands.Cog):
             title="About CalmBot:", description="This message will give you all of the information regarding CalmBot!", colour=discord.Colour.dark_gray())
 
         embeded_message.set_thumbnail(
-            url=ctx.guild.icon
+            url=self.client.user.avatar.url
         )
 
         embeded_message.add_field(
@@ -47,7 +47,7 @@ class info(commands.Cog):
         )
 
         embeded_message.add_field(
-            name="$send_dog:", value="[Aliases: $dog] Similar that of the $send_fox command; this asks CalmBot to display a cute dog."
+            name="$send_dog:", value="[Aliases: $dog] Similar to that of the $send_fox command; this asks CalmBot to display a cute dog."
         )
 
         await ctx.send(f"{ctx.author.mention}: Here you are!", embed=embeded_message)
