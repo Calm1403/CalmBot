@@ -10,7 +10,7 @@ class dog(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print("~~~ The dog.py cog has been")
+        print(f"~~~ The dog.py cog has been {F.GREEN}loaded{F.RESET}! ~~~")
 
     @commands.command(aliases=["dog"])
     async def send_dog(self, ctx):
