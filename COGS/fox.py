@@ -15,7 +15,7 @@ class fox(commands.Cog):
     @commands.command(aliases=["fox"])
     async def send_fox(self, ctx):
         request = requests.get("https://randomfox.ca/floof/")
-        fox_to_be_sent = request.json()["floof"]
+        fox_to_be_sent = request.json()["image"]
 
         await ctx.send(f"{ctx.author.mention}: Here you are! {fox_to_be_sent}")
 
