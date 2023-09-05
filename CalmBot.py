@@ -18,23 +18,6 @@ async def on_ready():
     )
 
 
-@client.event
-async def on_message(message):
-    # Anti-Rickroll.
-    await client.process_commands(message)
-    # Check to see if message is a command.
-
-    channel = await client.get_channel(message.channel.id)
-    # Get channel identity.
-
-    if message.content == "https://youtu.be/dQw4w9WgXcQ":
-        # If message content is equal to rick astley's epic hit music video.
-        await message.delete()
-        # Delete message.
-        await channel.send(f"{message.author.mention}: Nope! No rick-rolling while I'm in town!")
-        # Send response to message.
-
-
 async def load():
     for filename in os.listdir("Python/BOT/COGS"):
         # For every file in the directory.
