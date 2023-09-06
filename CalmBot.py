@@ -45,7 +45,7 @@ try:
 except KeyboardInterrupt:
     os.system("clear")
     print(
-        f"~~~ The CalmBot has {F.RED}disconnected{F.RESET} from discord! ~~~"
+        f"~~~ The CalmBot has been {F.RED}shutdown{F.RESET}! ~~~"
     )
 
 # Run the main function asyncronously.
