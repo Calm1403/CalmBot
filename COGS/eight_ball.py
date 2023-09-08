@@ -31,20 +31,30 @@ class eight_ball(commands.Cog):
 
         await ctx.send(f"{ctx.author.mention}: Hey, ask me a yes or no question!")
         question = await self.client.wait_for("message", check=check)
+        # This makes the bot wait for a user input, then asigns that user input to a variable.
 
         with open("Python/BOT/COGS/responses.txt") as random_responses_file:
+            # This opens the file called responses.txt, and sets the file object to the random_responses_file variable.
             random_responses_list = []
+            # This is the array of trimmed elements from the file object.
 
             for element in random_responses_file.readlines():
+                # For each element in the file object.
                 if element.__contains__("\n"):
+                    # If the current element contains a new line keyword.
                     random_responses_list.append(element[:-1])
+                    # Remove the character at the end of the element and append it to the random_response array.
 
                 else:
+                    # If the element doesn't contain a new line keyword.
                     random_responses_list.append(element)
+                    # Append the element without the \n to be included in the random reponses.
 
             random_response = random.choice(random_responses_list)
+            # Randomly choose one of the elements from the random_responses_list array.
 
         await ctx.send(f"{ctx.author.mention}: \"{question.content}\", {random_response}")
+        # Send that to the discord chat.
 
 
 async def setup(client):
