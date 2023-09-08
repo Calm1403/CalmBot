@@ -12,10 +12,14 @@ class message(commands.Cog):
         print(f"~~~ The message.py cog has been {F.GREEN}loaded{F.RESET}!")
 
     @commands.Cog.listener("on_message")
+    # This decorator will intake a function to be called during a certain event. In this case it's the on_message event.
     async def remove_message(self, message):
         if message.content == "https://youtu.be/dQw4w9WgXcQ":
+            # If the message is equal to rick astley's epic music video.
             await message.delete()
+            # Delete le epic troll.
             await message.channel.send(f"{message.author.mention}: Nope! No rick-rolling while I'm in town!")
+            # Send response to le epic troll.
 
 
 async def setup(client):
