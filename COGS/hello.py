@@ -30,12 +30,14 @@ class hello(commands.Cog):
                     # Append new element to random_greetings_list.
 
                 else:
-                    # If not, append element.
                     random_greetings_list.append(element)
+                    # If not, append element.
 
             random_greeting = random.choice(random_greetings_list)
+            # Pick a random response to be sent.
 
         await ctx.send(f"{ctx.author.mention}: {random_greeting}")
+        # Send that randomly chosen response.
 
 
 async def setup(client):
