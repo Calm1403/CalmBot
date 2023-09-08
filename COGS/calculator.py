@@ -84,7 +84,7 @@ class calculator(commands.Cog):
         else:
             # Else, during the event that the operator the bot recieved is not equal to any of the other operators, but in the hard-coded tuple.
             output = number_1 / number_2
-            # Calculate only remaining operator.
+            # Calculate using the only remaining operator.
             await ctx.send(
                 f"{ctx.author.mention}: {number_1} / {number_2} = {output}")
             # Send output to display.
