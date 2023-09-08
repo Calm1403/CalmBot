@@ -40,12 +40,12 @@ async def main():
         await client.start(token)
 
 try:
+    # Attempt to run the main function asyncronously.
     asyncio.run(main())
 
 except KeyboardInterrupt:
+    # In the event that ctrl + c is pressed: clear the terminal, and send "The CalmBot has shutdown" to the display.
     os.system("clear")
     print(
         f"~~~ The CalmBot has been {F.RED}shutdown{F.RESET}! ~~~"
     )
-
-# Run the main function asyncronously.
