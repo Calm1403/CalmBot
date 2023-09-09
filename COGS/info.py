@@ -47,11 +47,15 @@ class info(commands.Cog):
         )
 
         embeded_message.add_field(
+            name="$send_quote:", value="[Alias: $quote] This asks CalmBot to say a quote."
+        )
+
+        embeded_message.add_field(
             name="$send_fox:", value="[Alias: $fox] This asks CalmBot to display a cute fox.", inline=False
         )
 
         embeded_message.add_field(
-            name="$send_dog:", value="[Aliases: $dog] Similar to that of the $send_fox command; this asks CalmBot to display a cute dog.", inline=False
+            name="$send_dog:", value="[Aliases: $dog] Similar to that of the $send_fox command, this asks CalmBot to display a cute dog.", inline=False
         )
 
         await ctx.send(f"{ctx.author.mention}: Here you are!", embed=embeded_message)
