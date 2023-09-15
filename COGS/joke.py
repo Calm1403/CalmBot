@@ -17,12 +17,12 @@ class joke(commands.Cog):
         request = requests.get("https://quotenjoke.vercel.app/joke")
         status = request.status_code
 
-        if status != 500:
-            joke_to_be_sent = request.json()
-            await ctx.send(f"{ctx.author.mention}: {joke_to_be_sent['joke']}")
+        if status == 500:
+            await ctx.send(f"{ctx.author.mention}: Sorry.. there was a problem with the request.")
 
         else:
-            await ctx.send(f"{ctx.author.mention}: Sorry.. there was a problem with the request.")
+            joke_to_be_sent = request.json()
+            await ctx.send(f"{ctx.author.mention}: {joke_to_be_sent['joke']}")
 
 
 async def setup(client):
