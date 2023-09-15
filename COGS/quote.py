@@ -17,12 +17,12 @@ class quote(commands.Cog):
         request = requests.get("https://quotenjoke.vercel.app/quote")
         status = request.status_code
 
-        if status != 500:
-            quote_to_be_sent = request.json()
-            await ctx.send(f"{ctx.author.mention}: \"{quote_to_be_sent['content']}\" - {quote_to_be_sent['author']}")
+        if status == 500:
+            await ctx.send(f"{ctx.author.mention}: Sorry.. there was a problem with the request.")
 
         else:
-            await ctx.send(f"{ctx.author.mention}: Sorry.. there was a problem with the request.")
+            quote_to_be_sent = request.json()
+            await ctx.send(f"{ctx.author.mention}: \"{quote_to_be_sent['content']}\" - {quote_to_be_sent['author']}")
 
 
 async def setup(client):
