@@ -14,8 +14,8 @@ class quote(commands.Cog):
 
     @commands.command(aliases=["quote"])
     async def send_quote(self, ctx):
-        request = await requests.get("https://quotenjoke.vercel.app/quote")
-        status = await request.status_code
+        request = requests.get("https://quotenjoke.vercel.app/quote")
+        status = request.status_code
 
         if status == 500:
             await ctx.send(f"{ctx.author.mention}: Sorry.. there was a problem with the request.")
