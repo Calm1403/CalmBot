@@ -14,8 +14,8 @@ class joke(commands.Cog):
 
     @commands.command(aliases=["joke"])
     async def send_joke(self, ctx):
-        request = requests.get("https://quotenjoke.vercel.app/joke")
-        status = request.status_code
+        request = await requests.get("https://quotenjoke.vercel.app/joke")
+        status = await request.status_code
 
         if status == 500:
             await ctx.send(f"{ctx.author.mention}: Sorry.. there was a problem with the request.")
