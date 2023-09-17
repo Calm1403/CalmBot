@@ -15,10 +15,9 @@ class joke(commands.Cog):
     @commands.command(aliases=["joke"])
     async def send_joke(self, ctx):
         # This command will send a joke.
-        request = requests.get("https://quotenjoke.vercel.app/joke")
-        status = request.status_code
+        request = requests.get("https://quotenjoke.onrender.com/joke")
 
-        if status == 500:
+        if request.status_code == 500:
             await ctx.send(f"{ctx.author.mention}: Sorry.. there was a problem with the request.")
 
         else:
