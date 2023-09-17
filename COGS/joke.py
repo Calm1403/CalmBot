@@ -16,12 +16,12 @@ class joke(commands.Cog):
     async def send_joke(self, ctx):
         # This command will send a joke.
         request = requests.get("https://quotenjoke.onrender.com/joke")
+        joke_to_be_sent = request.json()
 
         if request.status_code == 500:
             await ctx.send(f"{ctx.author.mention}: Sorry.. there was a problem with the request.")
 
         else:
-            joke_to_be_sent = request.json()
             await ctx.send(f"{ctx.author.mention}: {joke_to_be_sent['joke']}")
 
 
