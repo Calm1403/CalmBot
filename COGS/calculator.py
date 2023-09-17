@@ -15,8 +15,7 @@ class calculator(commands.Cog):
 
     @commands.command(aliases=["calc"])
     async def calculator(self, ctx):
-        # This function will, as the name suggests, will act like that of a simple calculator.
-
+        # This command will act like that of a simple calculator.
         def check(m):
             return m.author == ctx.author
 
@@ -25,21 +24,16 @@ class calculator(commands.Cog):
 
         try:
             number_1 = int(number_1.content)
-            # If the number the bot recieved can't be converted to an int.
 
         except:
             await ctx.send(f"{ctx.author.mention}: That's not a number yo.. :skull:")
-            # Send output "That's not a number yo.." to chat.
             return
-            # Return nothing to stop the bot during an active command.
 
         await ctx.send(f"{ctx.author.mention}: Enter your operator!")
         operator = await self.client.wait_for("message", check=check)
 
         if operator.content not in ("*", "/", "+", "-", "%", "^"):
-            # If the operand the bot recieved is not in hard-coded tuple.
             await ctx.send(f"{ctx.author.mention}: That's not an operator yo.. :skull:")
-            # Send output "That's not an operator yo.." to chat.
             return
 
         await ctx.send(f"{ctx.author.mention}: Enter your second number!")
@@ -53,12 +47,9 @@ class calculator(commands.Cog):
             return
 
         if operator.content == "*":
-            # If the entered operator is equal to astrix.
             output = number_1 * number_2
-            # Calculate output.
             await ctx.send(
                 f"{ctx.author.mention}: {number_1} * {number_2} = {output}")
-            # Send output to display.
 
         elif operator.content == "+":
             output = number_1 + number_2
@@ -82,12 +73,9 @@ class calculator(commands.Cog):
             )
 
         else:
-            # Else, during the event that the operator the bot recieved is not equal to any of the other operators, but in the hard-coded tuple.
             output = number_1 / number_2
-            # Calculate using the only remaining operator.
             await ctx.send(
                 f"{ctx.author.mention}: {number_1} / {number_2} = {output}")
-            # Send output to display.
 
 
 async def setup(client):

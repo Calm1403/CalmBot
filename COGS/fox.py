@@ -14,13 +14,11 @@ class fox(commands.Cog):
 
     @commands.command(aliases=["fox"])
     async def send_fox(self, ctx):
+        # This command will send a picture of a fox.
         request = requests.get("https://randomfox.ca/floof/")
-        # Make a request to the random fox API.
         fox_to_be_sent = request.json()["image"]
-        # Using the API key "image", get the fox to be sent.
 
         await ctx.send(f"{ctx.author.mention}: Here you are! {fox_to_be_sent}")
-        # Send the image of the fox to the discord chat.
 
 
 async def setup(client):

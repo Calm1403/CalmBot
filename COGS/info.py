@@ -13,18 +13,14 @@ class info(commands.Cog):
 
     @commands.command(aliases=["help"])
     async def info(self, ctx):
-        # This command will display the information regarding the discord bot.
+        # This command will send info about the bot.
 
         embeded_message = discord.Embed(
             title="About CalmBot:", description="This message will give you all of the information regarding CalmBot!", colour=discord.Colour.dark_gray())
-        # Create embed instance.
 
         embeded_message.set_thumbnail(
             url=self.client.user.avatar.url
-            # Set the thumnail of the embed to the bot's profile.
         )
-
-        # The methods below add fields to the embeded message to be used to contain information regarding the various commands.
 
         embeded_message.add_field(
             name="$info:", value="[Alias: $help] This asks CalmBot to say their avaliable commands and other information.", inline=False
@@ -63,7 +59,6 @@ class info(commands.Cog):
         )
 
         await ctx.send(f"{ctx.author.mention}: Here you are!", embed=embeded_message)
-        # Send the embeded message to the discord chat.
 
 
 async def setup(client):

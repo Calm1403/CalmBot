@@ -14,6 +14,7 @@ class quote(commands.Cog):
 
     @commands.command(aliases=["quote"])
     async def send_quote(self, ctx):
+        # This command will send a quote.
         request = requests.get("https://quotenjoke.vercel.app/quote")
         status = request.status_code
 

@@ -14,6 +14,7 @@ class dog(commands.Cog):
 
     @commands.command(aliases=["dog"])
     async def send_dog(self, ctx):
+        # This command will send a picture of a dog.
         request = requests.get("https://dog.ceo/api/breeds/image/random")
         dog_to_be_sent = request.json()["message"]
 

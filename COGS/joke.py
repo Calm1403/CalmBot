@@ -14,6 +14,7 @@ class joke(commands.Cog):
 
     @commands.command(aliases=["joke"])
     async def send_joke(self, ctx):
+        # This command will send a joke.
         request = requests.get("https://quotenjoke.vercel.app/joke")
         status = request.status_code
 
