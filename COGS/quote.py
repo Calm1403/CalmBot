@@ -15,14 +15,13 @@ class quote(commands.Cog):
     @commands.command(aliases=["quote"])
     async def send_quote(self, ctx):
         # This command will send a quote.
-        request = requests.get("https://quotenjoke.vercel.app/quote")
-        status = request.status_code
+        request = requests.get("https://quotenjoke.onrender.com/quote")
+        quote_to_be_sent = request.json()
 
-        if status == 500:
+        if request.status_code == 500:
             await ctx.send(f"{ctx.author.mention}: Sorry.. there was a problem with the request.")
 
         else:
-            quote_to_be_sent = request.json()
             await ctx.send(f"{ctx.author.mention}: \"{quote_to_be_sent['content']}\" - {quote_to_be_sent['author']}")
 
 
