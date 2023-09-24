@@ -1,6 +1,6 @@
 from discord.ext import commands
 from colorama import Fore as F
-import requests
+import aiohttp
 import discord
 
 
@@ -15,10 +15,12 @@ class fox(commands.Cog):
     @commands.command(aliases=["fox"])
     async def send_fox(self, ctx):
         # This command will send a picture of a fox.
-        request = requests.get("https://randomfox.ca/floof/")
-        fox_to_be_sent = request.json()["image"]
 
-        await ctx.send(f"{ctx.author.mention}: Here you are! {fox_to_be_sent}")
+        async with aiohttp.ClientSession() as session:
+            async with session.get("https://randomfox.ca/floof/") as request:
+                fox_to_be_sent = await request.json()["image"]
+
+                await ctx.send(f"{ctx.author.mention}: Here you are! {fox_to_be_sent}")
 
 
 async def setup(client):
