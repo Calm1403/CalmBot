@@ -19,7 +19,7 @@ class dog(commands.Cog):
             async with session.get("https://dog.ceo/api/breeds/image/random") as request:
                 dog_to_be_sent = request.json()
 
-        await ctx.send(f"{ctx.author.mention}: Here you are! {dog_to_be_sent["message"]}")
+        await ctx.send(f"{ctx.author.mention}: Here you are! {dog_to_be_sent['message']}")
 
 
 async def setup(client):
