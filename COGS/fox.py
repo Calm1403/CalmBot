@@ -18,9 +18,9 @@ class fox(commands.Cog):
 
         async with aiohttp.ClientSession() as session:
             async with session.get("https://randomfox.ca/floof/") as request:
-                fox_to_be_sent = await request.json()["image"]
+                fox_to_be_sent = await request.json()
 
-                await ctx.send(f"{ctx.author.mention}: Here you are! {fox_to_be_sent}")
+                await ctx.send(f"{ctx.author.mention}: Here you are! {fox_to_be_sent['image']}")
 
 
 async def setup(client):
