@@ -1,6 +1,6 @@
 from discord.ext import commands
 from colorama import Fore as F
-import requests
+import aiohttp
 import discord
 
 
@@ -15,14 +15,12 @@ class joke(commands.Cog):
     @commands.command(aliases=["joke"])
     async def send_joke(self, ctx):
         # This command will send a joke.
-        request = requests.get("https://quotenjoke.onrender.com/joke")
-        joke_to_be_sent = request.json()
 
-        if request.status_code == 500:
-            await ctx.send(f"{ctx.author.mention}: Sorry.. there was a problem with the request.")
+        async with aiohttp.ClientSession() as session:
+            async with session.get("https://quotenjoke.onrender.com/joke") as request:
+                joke_to_be_sent = await request.json()
 
-        else:
-            await ctx.send(f"{ctx.author.mention}: {joke_to_be_sent['joke']}")
+                await ctx.send(f"{ctx.author.mention}: {joke_to_be_sent['joke']}")
 
 
 async def setup(client):
