@@ -15,4 +15,4 @@ List of APIs used:
 
 2.  dogAPI: [Repo][dogGitHubLink] | [Site][dogWebSiteLink]  
 
-3.  quoteAPI/jokeAPI: [Repo][quotenJokeGitHubLink]  
+3.  quoteAPI/jokeAPI: [Repo][quotenJokeGitHubLink]
