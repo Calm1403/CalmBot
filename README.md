@@ -4,10 +4,11 @@ This is a discord bot, created by Calm1403.
 List of APIs used:
 
 [foxGitHubLink]: <https://github.com/xinitrc-dev/randomfox.ca>
+[foxWebSiteLink]: <https://randomfox.ca/>
 
 1.  foxAPI: 
-Site -> https://randomfox.ca/ | 
-GitHub -> [randomFoxApi][foxGitHubLink]
+WebSite: [Site][foxWebSiteLink]
+GitHub: [Repo][foxGitHubLink]
 
 2.  dogAPI:
 Site -> https://dog.ceo/dog-api/ | 
