@@ -1,6 +1,6 @@
 from discord.ext import commands
 from colorama import Fore as F
-import requests
+import aiohttp
 import discord
 
 
@@ -15,10 +15,11 @@ class dog(commands.Cog):
     @commands.command(aliases=["dog"])
     async def send_dog(self, ctx):
         # This command will send a picture of a dog.
-        request = requests.get("https://dog.ceo/api/breeds/image/random")
-        dog_to_be_sent = request.json()["message"]
+        async with aiohttp.ClientSession() as session:
+            async with session.get("https://dog.ceo/api/breeds/image/random") as request:
+                dog_to_be_sent = request.json()
 
-        await ctx.send(f"{ctx.author.mention}: Here you are! {dog_to_be_sent}")
+        await ctx.send(f"{ctx.author.mention}: Here you are! {dog_to_be_sent["message"]}")
 
 
 async def setup(client):
