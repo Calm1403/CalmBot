@@ -7,8 +7,8 @@ List of APIs used:
 [foxWebSiteLink]: <https://randomfox.ca/>
 
 1.  foxAPI: 
-WebSite: [Site][foxWebSiteLink]
-GitHub: [Repo][foxGitHubLink]
+WebSite: [Site][foxWebSiteLink]  
+GitHub: [Repo][foxGitHubLink]  
 
 2.  dogAPI:
 Site -> https://dog.ceo/dog-api/ | 
