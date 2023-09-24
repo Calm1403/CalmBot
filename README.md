@@ -6,7 +6,7 @@ List of APIs used:
 [foxGitHubLink]: <https://github.com/xinitrc-dev/randomfox.ca>
 [foxWebSiteLink]: <https://randomfox.ca/>
 
-1.  foxAPI: 
+1.  foxAPI:   
 WebSite: [Site][foxWebSiteLink]  
 GitHub: [Repo][foxGitHubLink]  
 
