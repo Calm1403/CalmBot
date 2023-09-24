@@ -16,8 +16,8 @@ WebSite: [Site][foxWebSiteLink]
 GitHub: [Repo][foxGitHubLink]  
 
 2.  dogAPI:  
-WebSite: [Site][dogWebSiteLink]  
 GitHub: [Repo][dogGitHubLink]  
+WebSite: [Site][dogWebSiteLink]  
 
 3.  quoteAPI/jokeAPI:  
 GitHub: [Repo][quotenJokeGitHubLink]  
