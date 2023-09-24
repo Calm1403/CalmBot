@@ -12,12 +12,12 @@ List of APIs used:
 [quotenJokeGitHubLink]: <https://github.com/NotCookey/QuotenJoke-Api> 
 
 1.  foxAPI:  
-GitHub: [Repo][foxGitHubLink]  
-WebSite: [Site][foxWebSiteLink]  
+GitHub -> [Repo][foxGitHubLink]  
+WebSite -> [Site][foxWebSiteLink]  
 
 2.  dogAPI:  
-GitHub: [Repo][dogGitHubLink]  
-WebSite: [Site][dogWebSiteLink]  
+GitHub -> [Repo][dogGitHubLink]  
+WebSite -> [Site][dogWebSiteLink]  
 
 3.  quoteAPI/jokeAPI:  
-GitHub: [Repo][quotenJokeGitHubLink]  
+GitHub -> [Repo][quotenJokeGitHubLink]  
