@@ -10,8 +10,8 @@ List of APIs used:
 [dogWebSiteLink]: https://dog.ceo/dog-api/
 [quotenJokeGitHubLink]: https://github.com/NotCookey/QuotenJoke-Api
 
-1.  foxAPI: [Repo][foxGitHubLink] | [Site][foxWebSiteLink]
+1. foxAPI: [Repo][foxGitHubLink] | [Site][foxWebSiteLink]
 
-2.  dogAPI: [Repo][dogGitHubLink] | [Site][dogWebSiteLink]
+2. dogAPI: [Repo][dogGitHubLink] | [Site][dogWebSiteLink]
 
-3.  quoteAPI/jokeAPI: [Repo][quotenJokeGitHubLink]
+3. quoteAPI/jokeAPI: [Repo][quotenJokeGitHubLink]
