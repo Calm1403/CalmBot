@@ -21,3 +21,5 @@ This is a discord bot, created by Calm1403.
 [inviteLink]: https://discord.com/api/oauth2/authorize?client_id=1141041960862367785&permissions=8&scope=bot
 
 [Here's the link!][inviteLink]
+
+Note: the bot may not always be active as I don't have a proper way of hosting it yet.
