@@ -2,9 +2,7 @@
 
 This is a discord bot, created by Calm1403.
 
-[inviteLink]: https://discord.com/api/oauth2/authorize?client_id=1141041960862367785&permissions=8&scope=bot
-
-List of APIs used:
+## APIs
 
 [foxGitHubLink]: https://github.com/xinitrc-dev/randomfox.ca
 [foxWebSiteLink]: https://randomfox.ca/
@@ -18,6 +16,8 @@ List of APIs used:
 
 3. quoteAPI/jokeAPI: [Repo][quotenJokeGitHubLink]
 
-Invite it to your server:
+## Want to invite it to your server?
+
+[inviteLink]: https://discord.com/api/oauth2/authorize?client_id=1141041960862367785&permissions=8&scope=bot
 
 [Invite][inviteLink]
