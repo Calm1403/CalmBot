@@ -20,4 +20,4 @@ This is a discord bot, created by Calm1403.
 
 [inviteLink]: https://discord.com/api/oauth2/authorize?client_id=1141041960862367785&permissions=8&scope=bot
 
-[Invite][inviteLink]
+[Here's the link!][inviteLink]
