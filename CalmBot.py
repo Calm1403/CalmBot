@@ -43,3 +43,5 @@ except KeyboardInterrupt:
     print(
         f"~~~ The CalmBot has been {F.RED}shutdown{F.RESET}! ~~~"
     )
+
+# Small test comment.
