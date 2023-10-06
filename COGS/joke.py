@@ -18,6 +18,9 @@ class joke(commands.Cog):
 
         async with aiohttp.ClientSession() as session:
             async with session.get("https://quotenjoke.onrender.com/joke") as request:
+                if request.status != 200:
+                    return await ctx.send(f"{ctx.author.mention}: Sorry, there was a problem with the request.. {request.status}")
+
                 joke_to_be_sent = await request.json()
 
                 await ctx.send(f"{ctx.author.mention}: {joke_to_be_sent['joke']}")
