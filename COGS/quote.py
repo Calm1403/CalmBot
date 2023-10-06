@@ -18,6 +18,9 @@ class quote(commands.Cog):
 
         async with aiohttp.ClientSession() as session:
             async with session.get("https://quotenjoke.onrender.com/quote") as request:
+                if request.status != 200:
+                    return await ctx.send(f"{crx.author.mention}: Sorry, there was a problem with the request.. {request.status}")
+
                 quote_to_be_sent = await request.json()
 
                 await ctx.send(f"{ctx.author.mention}: \"{quote_to_be_sent['content']}\" - {quote_to_be_sent['author']}")
