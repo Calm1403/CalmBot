@@ -17,7 +17,7 @@ class calculator(commands.Cog):
     async def calculator(self, ctx):
         # This command will act like that of a simple calculator.
         def check(m):
-            return m.author == ctx.author and m[0] != "$"
+            return m.author == ctx.author
 
         await ctx.send(f"{ctx.author.mention}: Enter your first number!")
         number_1 = await self.client.wait_for("message", check=check)
