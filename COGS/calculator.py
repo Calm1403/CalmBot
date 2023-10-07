@@ -72,7 +72,12 @@ class calculator(commands.Cog):
                 f"{ctx.author.mention}: {number_1} ^ {number_2} = {output}")
 
         else:
-            output = number_1 / number_2
+            try:
+                output = number_1 / number_2
+
+            except:
+                await ctx.send(f"{ctx.author.mention}: I can't really divide {number_1} by {number_2} can I now?")
+
             await ctx.send(
                 f"{ctx.author.mention}: {number_1} / {number_2} = {output}")
 
