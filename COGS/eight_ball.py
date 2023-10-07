@@ -18,9 +18,9 @@ class eight_ball(commands.Cog):
     async def eight_ball(self, ctx):
         # This command will intake a question, then reply to that question with a random response.
         def check(m):
-            return m.author == ctx.author and m[0] != "$"
+            return m.author == ctx.author
 
-        await ctx.send(f"{ctx.author.mention}: Hey, ask me a yes or no question!")
+        await ctx.send(f"{ctx.author.mention}: Hey, ask me a yes or no question! :smile:")
         question = await self.client.wait_for("message", check=check)
 
         with open("Python/BOT/COGS/responses.txt") as random_responses_file:
