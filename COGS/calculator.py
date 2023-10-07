@@ -17,7 +17,7 @@ class calculator(commands.Cog):
     async def calculator(self, ctx):
         # This command will act like that of a simple calculator.
         def check(m):
-            return m.author == ctx.author
+            return m.author == ctx.author and m[0] != "$"
 
         await ctx.send(f"{ctx.author.mention}: Enter your first number!")
         number_1 = await self.client.wait_for("message", check=check)
@@ -69,8 +69,7 @@ class calculator(commands.Cog):
         elif operator.content == "^":
             output = number_1 ^ number_2
             await ctx.send(
-                f"{ctx.author.mention}: {number_1} ^ {number_2} = {output}"
-            )
+                f"{ctx.author.mention}: {number_1} ^ {number_2} = {output}")
 
         else:
             output = number_1 / number_2
