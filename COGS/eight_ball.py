@@ -18,7 +18,7 @@ class eight_ball(commands.Cog):
     async def eight_ball(self, ctx):
         # This command will intake a question, then reply to that question with a random response.
         def check(m):
-            return m.author == ctx.author
+            return m.author == ctx.author and m[0] != "$"
 
         await ctx.send(f"{ctx.author.mention}: Hey, ask me a yes or no question!")
         question = await self.client.wait_for("message", check=check)
