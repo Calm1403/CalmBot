@@ -24,16 +24,12 @@ class eight_ball(commands.Cog):
         question = await self.client.wait_for("message", check=check)
 
         with open("Python/BOT/COGS/responses.txt") as random_responses_file:
-            random_responses_list = []
 
-            for element in random_responses_file.readlines():
-                if element.__contains__("\n"):
-                    random_responses_list.append(element[:-1])
+            random_response = random.choice(random_responses_file.readlines())
 
-                else:
-                    random_responses_list.append(element)
-
-            random_response = random.choice(random_responses_list)
+            if random_response.__contains__("\n"):
+                await ctx.send(f"{ctx.author.mention}: \"{question.content}\" - {random_response[:-1]}")
+                return
 
         await ctx.send(f"{ctx.author.mention}: \"{question.content}\" - {random_response}")
 
