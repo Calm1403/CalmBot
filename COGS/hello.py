@@ -17,18 +17,13 @@ class hello(commands.Cog):
     async def hello(self, ctx):
         # This command will display a friendly greeting.
         with open("Python/BOT/COGS/greetings.txt") as random_greetings_file:
-            random_greetings_list = []
+            random_greeting = random.choice(random_greetings_file.readlines())
 
-            for element in random_greetings_file.readlines():
-                if element.__contains__("\n"):
-                    random_greetings_list.append(element[:-1])
+            if random_greeting.__contains__("\n"):
+                await ctx.send(f"{ctx.author.mention}: {random_greeting[:-1]}")
+                return
 
-                else:
-                    random_greetings_list.append(element)
-
-            random_greeting = random.choice(random_greetings_list)
-
-        await ctx.send(f"{ctx.author.mention}: {random_greeting}")
+            await ctx.send(f"{ctx.author.mention}: {random_greeting}")
 
 
 async def setup(client):
