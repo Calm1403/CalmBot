@@ -27,7 +27,7 @@ class eight_ball(commands.Cog):
 
             random_response = random.choice(random_responses_file.readlines())
 
-            if random_response.__contains__("\n"):
+            if random_response[len(random_response) - 1] == "\n":
                 await ctx.send(f"{ctx.author.mention}: \"{question.content}\" - {random_response[:-1]}")
                 return
 
