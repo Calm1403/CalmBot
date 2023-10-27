@@ -19,7 +19,7 @@ class hello(commands.Cog):
         with open("Python/BOT/COGS/greetings.txt") as random_greetings_file:
             random_greeting = random.choice(random_greetings_file.readlines())
 
-            if random_greeting.__contains__("\n"):
+            if random_greeting(len(random_greeting) - 1) == "\n":
                 await ctx.send(f"{ctx.author.mention}: {random_greeting[:-1]}")
                 return
 
