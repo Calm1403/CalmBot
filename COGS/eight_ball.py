@@ -24,7 +24,6 @@ class eight_ball(commands.Cog):
         question = await self.client.wait_for("message", check=check)
 
         with open("Python/BOT/COGS/responses.txt") as random_responses_file:
-
             random_response = random.choice(random_responses_file.readlines())
 
             if random_response[len(random_response) - 1] == "\n":
