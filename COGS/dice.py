@@ -28,16 +28,16 @@ class dice(commands.Cog):
         await ctx.send(f"{ctx.author.mention}: Alright, I'm gonna roll the dice; guess a number between one and six! :smile:")
         guess = await self.client.wait_for("message", check=check)
 
-        if guess == integer_to_guess:
+        if int(guess) == integer_to_guess:
             return await ctx.send(f"{ctx.author.mention}: Correct! {guess} was the right answer!")
 
-        if guess > 6:
+        if int(guess) > 6:
             return await ctx.send(f"{ctx.author.mention}: This is a six sidded die.. :skull:")
 
-        if guess < 1:
+        if int(guess) < 1:
             return await ctx.send(f"{ctx.author.mention}: It.. it doesn't.. what? :skull:")
 
-        if guess != interger_to_guess:
+        if int(guess) != interger_to_guess:
             return await ctx.send(f"{ctx.author.mention}: Nope! {guess} was not the right answer; the right answer was {interger_to_guess}!")
 
 
