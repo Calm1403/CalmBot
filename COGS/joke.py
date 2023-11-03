@@ -23,7 +23,7 @@ class joke(commands.Cog):
 
                 joke_to_be_sent = await request.json()
 
-                await ctx.send(f"{ctx.author.mention}: {joke_to_be_sent['joke']}")
+            await ctx.send(f"{ctx.author.mention}: {joke_to_be_sent['joke']}")
 
 
 async def setup(client):

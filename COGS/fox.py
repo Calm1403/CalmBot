@@ -23,7 +23,7 @@ class fox(commands.Cog):
 
                 fox_to_be_sent = await request.json()
 
-                await ctx.send(f"{ctx.author.mention}: Here you are! {fox_to_be_sent['image']}")
+            await ctx.send(f"{ctx.author.mention}: Here you are! {fox_to_be_sent['image']}")
 
 
 async def setup(client):

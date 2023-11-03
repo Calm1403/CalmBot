@@ -23,7 +23,7 @@ class quote(commands.Cog):
 
                 quote_to_be_sent = await request.json()
 
-                await ctx.send(f"{ctx.author.mention}: \"{quote_to_be_sent['content']}\" - {quote_to_be_sent['author']}")
+            await ctx.send(f"{ctx.author.mention}: \"{quote_to_be_sent['content']}\" - {quote_to_be_sent['author']}")
 
 
 async def setup(client):

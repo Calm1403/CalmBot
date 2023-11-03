@@ -22,7 +22,7 @@ class dog(commands.Cog):
 
                 dog_to_be_sent = await request.json()
 
-                await ctx.send(f"{ctx.author.mention}: Here you are! {dog_to_be_sent['message']}")
+            await ctx.send(f"{ctx.author.mention}: Here you are! {dog_to_be_sent['message']}")
 
 
 async def setup(client):
