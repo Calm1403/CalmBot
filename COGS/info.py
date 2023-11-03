@@ -45,6 +45,10 @@ class info(commands.Cog):
         )
 
         embeded_message.add_field(
+            name="$roll_dice:", value="[Alias: $dice] This asks CalmBot to play a game of dice."
+        )
+
+        embeded_message.add_field(
             name="$send_quote:", value="[Alias: $quote] This asks CalmBot to say a quote."
         )
 
