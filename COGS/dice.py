@@ -35,16 +35,16 @@ class dice(commands.Cog):
             return await ctx.send(f"{ctx.author.mention}: That's not a number yo.. :skull:")
 
         if guess == integer_to_guess:
-            return await ctx.send(f"{ctx.author.mention}: Correct! {guess} was the right answer!")
+            await ctx.send(f"{ctx.author.mention}: Correct! {guess} was the right answer!")
 
-        if guess > 6:
-            return await ctx.send(f"{ctx.author.mention}: This is a six sidded die.. :skull:")
+        elif guess > 6:
+            await ctx.send(f"{ctx.author.mention}: It's a six sided die.. :skull:")
 
-        if guess < 1:
-            return await ctx.send(f"{ctx.author.mention}: It.. it doesn't.. what? :skull:")
+        elif guess < 1:
+            await ctx.send(f"{ctx.author.mention}: But it can't.. it can't.. what? :skull:")
 
-        if guess != interger_to_guess:
-            return await ctx.send(f"{ctx.author.mention}: Nope! {guess} was not the right answer; the right answer was {interger_to_guess}!")
+        else:
+            await ctx.send(f"{ctx.author.mention}: Nope! The correct answer was {integer_to_guess}!")
 
 
 async def setup(client):
