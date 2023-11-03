@@ -20,8 +20,7 @@ class hello(commands.Cog):
             random_greeting = random.choice(random_greetings_file.readlines())
 
             if random_greeting[len(random_greeting) - 1] == "\n":
-                await ctx.send(f"{ctx.author.mention}: {random_greeting[:-1]}")
-                return
+                return await ctx.send(f"{ctx.author.mention}: {random_greeting[:-1]}")
 
             await ctx.send(f"{ctx.author.mention}: {random_greeting}")
 
