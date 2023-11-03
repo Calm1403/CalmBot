@@ -20,7 +20,7 @@ class dice(commands.Cog):
         # between one and six, generate a random number, and
         # evalutate whether or not the number guessed is equal to the
         # number generated.
-        interger_to_guess = random.randint(1, 6)
+        integer_to_guess = random.randint(1, 6)
 
         def check(m):
             return m.author == ctx.author
@@ -28,13 +28,13 @@ class dice(commands.Cog):
         await ctx.send(f"{ctx.author.mention}: Alright, I'm gonna roll the dice; guess a number between one and six! :smile:")
         guess = await self.client.wait_for("message", check=check)
 
-        if guess == interger_to_guess:
+        if guess == integer_to_guess:
             return await ctx.send(f"{ctx.author.mention}: Correct! {guess} was the right answer!")
 
         if guess > 6:
             return await ctx.send(f"{ctx.author.mention}: This is a six sidded die.. :skull:")
 
-        if guess < 6:
+        if guess < 1:
             return await ctx.send(f"{ctx.author.mention}: It.. it doesn't.. what? :skull:")
 
         if guess != interger_to_guess:
