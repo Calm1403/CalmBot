@@ -26,15 +26,13 @@ class calculator(commands.Cog):
             number_1 = int(number_1.content)
 
         except:
-            await ctx.send(f"{ctx.author.mention}: That's not a number yo.. :skull:")
-            return
+            return await ctx.send(f"{ctx.author.mention}: That's not a number yo.. :skull:")
 
         await ctx.send(f"{ctx.author.mention}: Enter your operator!")
         operator = await self.client.wait_for("message", check=check)
 
         if operator.content not in ("*", "/", "+", "-", "%", "^"):
-            await ctx.send(f"{ctx.author.mention}: That's not an operator yo.. :skull:")
-            return
+            return await ctx.send(f"{ctx.author.mention}: That's not an operator yo.. :skull:")
 
         await ctx.send(f"{ctx.author.mention}: Enter your second number!")
         number_2 = await self.client.wait_for("message", check=check)
@@ -43,8 +41,7 @@ class calculator(commands.Cog):
             number_2 = int(number_2.content)
 
         except:
-            await ctx.send(f"{ctx.author.mention}: That's not a number yo.. :skull:")
-            return
+            return await ctx.send(f"{ctx.author.mention}: That's not a number yo.. :skull:")
 
         if operator.content == "*":
             output = number_1 * number_2
@@ -76,8 +73,7 @@ class calculator(commands.Cog):
                 output = number_1 / number_2
 
             except:
-                await ctx.send(f"{ctx.author.mention}: I can't really divide {number_1} by {number_2} can I now?")
-                return
+                return await ctx.send(f"{ctx.author.mention}: I can't really divide {number_1} by {number_2} can I now?")
 
             await ctx.send(
                 f"{ctx.author.mention}: {number_1} / {number_2} = {output}")
