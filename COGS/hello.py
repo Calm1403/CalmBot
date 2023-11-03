@@ -19,10 +19,10 @@ class hello(commands.Cog):
         with open("Python/BOT/COGS/greetings.txt") as random_greetings_file:
             random_greeting = random.choice(random_greetings_file.readlines())
 
-            if random_greeting[len(random_greeting) - 1] == "\n":
-                return await ctx.send(f"{ctx.author.mention}: {random_greeting[:-1]}")
+        if random_greeting[len(random_greeting) - 1] == "\n":
+            return await ctx.send(f"{ctx.author.mention}: {random_greeting[:-1]}")
 
-            await ctx.send(f"{ctx.author.mention}: {random_greeting}")
+        await ctx.send(f"{ctx.author.mention}: {random_greeting}")
 
 
 async def setup(client):

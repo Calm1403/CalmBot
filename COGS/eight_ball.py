@@ -26,8 +26,8 @@ class eight_ball(commands.Cog):
         with open("Python/BOT/COGS/responses.txt") as random_responses_file:
             random_response = random.choice(random_responses_file.readlines())
 
-            if random_response[len(random_response) - 1] == "\n":
-                return await ctx.send(f"{ctx.author.mention}: \"{question.content}\" - {random_response[:-1]}")
+        if random_response[len(random_response) - 1] == "\n":
+            return await ctx.send(f"{ctx.author.mention}: \"{question.content}\" - {random_response[:-1]}")
 
         await ctx.send(f"{ctx.author.mention}: \"{question.content}\" - {random_response}")
 
