@@ -10,7 +10,7 @@ class calculator(commands.Cog):
     @commands.Cog.listener()
     async def on_ready(self):
         print(
-            f"~~~ The calculator.py cog has been {F.GREEN}loaded{F.RESET}! ~~~"
+            f"[{F.LIGHTBLUE_EX}COGS{F.RESET}] The calculator.py cog has been {F.GREEN}loaded{F.RESET}!"
         )
 
     @commands.command(aliases=["calc"])

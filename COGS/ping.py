@@ -9,7 +9,9 @@ class ping(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print(f"~~~ The ping.py cog has been {F.GREEN}loaded{F.RESET}! ~~~")
+        print(
+            f"[{F.LIGHTBLUE_EX}COGS{F.RESET}] The ping.py cog has been {F.GREEN}loaded{F.RESET}!"
+        )
 
     @commands.command(aliases=["latency"])
     async def ping(self, ctx):

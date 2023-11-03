@@ -14,7 +14,7 @@ async def on_ready():
     os.system("clear")
 
     print(
-        f"~~~ The CalmBot has {F.GREEN}connected{F.RESET} to discord! ~~~"
+        f"[{F.LIGHTMAGENTA_EX}BOT{F.RESET}] The CalmBot has {F.GREEN}connected{F.RESET} to discord!"
     )
 
 
@@ -41,5 +41,5 @@ except KeyboardInterrupt:
     os.system("clear")
 
     print(
-        f"~~~ The CalmBot has been {F.RED}shutdown{F.RESET}! ~~~"
+        f"[{F.LIGHTMAGENTA_EX}BOT{F.RESET}] The CalmBot has been {F.RED}shutdown{F.RESET}!"
     )

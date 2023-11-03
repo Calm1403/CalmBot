@@ -11,7 +11,7 @@ class eight_ball(commands.Cog):
     @commands.Cog.listener()
     async def on_ready(self):
         print(
-            f"~~~ The eight_ball.py cog has been {F.GREEN}loaded{F.RESET}! ~~~"
+            f"[{F.LIGHTBLUE_EX}COGS{F.RESET}] The eight_ball.py cog has been {F.GREEN}loaded{F.RESET}!"
         )
 
     @commands.command(aliases=["8ball"])

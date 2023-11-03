@@ -9,7 +9,9 @@ class message(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print(f"~~~ The message.py cog has been {F.GREEN}loaded{F.RESET}!")
+        print(
+            f"[{F.LIGHTBLUE_EX}COGS{F.RESET}] The message.py cog has been {F.GREEN}loaded{F.RESET}!"
+        )
 
     @commands.Cog.listener("on_message")
     # This decorator will intake a function to be called during a certain event. In this case it's the on_message event.

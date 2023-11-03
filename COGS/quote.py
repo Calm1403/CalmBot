@@ -10,7 +10,9 @@ class quote(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print(f"~~~ The quote.py cog has been {F.GREEN}loaded{F.RESET}! ~~~")
+        print(
+            f"[{F.LIGHTBLUE_EX}COGS{F.RESET}] The quote.py cog has been {F.GREEN}loaded{F.RESET}!"
+        )
 
     @commands.command(aliases=["quote"])
     async def send_quote(self, ctx):

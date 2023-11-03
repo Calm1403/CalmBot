@@ -9,7 +9,9 @@ class info(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print(f"~~~ The info.py cog has been {F.GREEN}loaded{F.RESET}! ~~~")
+        print(
+            f"[{F.LIGHTBLUE_EX}COGS{F.RESET}] The info.py cog has been {F.GREEN}loaded{F.RESET}!"
+        )
 
     @commands.command(aliases=["help"])
     async def info(self, ctx):

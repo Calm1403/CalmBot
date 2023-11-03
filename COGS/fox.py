@@ -10,7 +10,9 @@ class fox(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print(f"~~~ The fox.py cog has been {F.GREEN}loaded{F.RESET}! ~~~")
+        print(
+            f"[{F.LIGHTBLUE_EX}COGS{F.RESET}] The fox.py cog has been {F.GREEN}loaded{F.RESET}!"
+        )
 
     @commands.command(aliases=["fox"])
     async def send_fox(self, ctx):

@@ -10,7 +10,9 @@ class hello(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print(f"~~~ The hello.py cog has been {F.GREEN}loaded{F.RESET}! ~~~")
+        print(
+            f"[{F.LIGHTBLUE_EX}COGS{F.RESET}] The hello.py cog has been {F.GREEN}loaded{F.RESET}!"
+        )
 
     @commands.command(aliases=["hi"])
     # This decorator will intake a function to be used as a discord command.
