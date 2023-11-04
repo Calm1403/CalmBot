@@ -9,7 +9,7 @@ client = commands.Bot(command_prefix="$",
 
 
 @client.event
-# This decorator will state when the bot is fully-active.
+# This decorator will state when the is active.
 async def on_ready():
     os.system("clear")
 
