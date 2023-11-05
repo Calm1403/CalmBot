@@ -19,13 +19,17 @@ class quote(commands.Cog):
         # This command will send a quote.
 
         async with aiohttp.ClientSession() as session:
-            async with session.get("https://quotenjoke.onrender.com/quote") as request:
-                if request.status != 200:
-                    return await ctx.send(f"{ctx.author.mention}: Sorry, there was a problem with the request.. {request.status}")
+            try:
+                async with session.get("https://quotenjoke.onrender.com/quote") as request:
+                    quote_to_be_sent = await request.json()
 
-                quote_to_be_sent = await request.json()
+                await ctx.send(f"{ctx.author.mention}: \"{quote_to_be_sent['content']}\" - {quote_to_be_sent['author']}")
 
-            await ctx.send(f"{ctx.author.mention}: \"{quote_to_be_sent['content']}\" - {quote_to_be_sent['author']}")
+            except:
+                print(
+                    f"[{F.YELLOW}API{F.RESET}] {F.RED}Error{F.RESET} with request: {request.status} | {request.url}"
+                )
+                return await ctx.send(f"{ctx.author.mention}: Sorry, there was a problem with the request..")
 
 
 async def setup(client):
