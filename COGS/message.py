@@ -16,7 +16,7 @@ class message(commands.Cog):
     @commands.Cog.listener("on_message")
     # This decorator will intake a function to be called during a certain event. In this case it's the on_message event.
     async def remove_message(self, message):
-        if message.content == "https://youtu.be/dQw4w9WgXcQ":
+        if message.content == "https://youtu.be/dQw4w9WgXcQ" or "https://www.youtube.com/dQw4w9WgXcQ":
             await message.delete()
             await message.channel.send(f"{message.author.mention}: Nope! No rick-rolling while I'm in town!")
 
