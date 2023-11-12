@@ -29,7 +29,7 @@ class info(commands.Cog):
         )
 
         embeded_message.add_field(
-            name="$hello:", value="[Alias: $hi] This allows to you to greet CalmBot to which they'll reply with a (most of the time :shrug:) friendly greeting.", inline=False
+            name="$hello:", value="[Alias: $hi] This allows you to greet CalmBot to which they'll reply with a (most of the time :shrug:) friendly greeting.", inline=False
         )
 
         embeded_message.add_field(
