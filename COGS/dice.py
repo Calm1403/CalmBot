@@ -29,7 +29,7 @@ class dice(commands.Cog):
         await ctx.send(f"{ctx.author.mention}: Alright, I'm gonna roll the dice; bet a number between one and six! :smile:")
 
         try:
-            guess = await self.client.wait_for("message", check=check)
+            guess = await self.client.wait_for("message", check=check, timeout=10.0)
 
         except asyncio.TimeoutError:
             return await ctx.send(f"{ctx.author.mention}: Why did you ask to play a game of dice if you weren't going to play? :unamused:")
