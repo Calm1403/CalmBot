@@ -1,5 +1,6 @@
 from discord.ext import commands
 from colorama import Fore as F
+import asyncio
 import discord
 
 
@@ -20,7 +21,12 @@ class calculator(commands.Cog):
             return m.author == ctx.author
 
         await ctx.send(f"{ctx.author.mention}: Enter your first number!")
-        number_1 = await self.client.wait_for("message", check=check)
+
+        try:
+            number_1 = await self.client.wait_for("message", check=check, timeout=10.0)
+
+        except asyncio.TimeoutError:
+            return await ctx.send(f"{ctx.author.mention}: Fine.. don't enter your first number. :unamused:")
 
         try:
             number_1 = int(number_1.content)
@@ -29,13 +35,23 @@ class calculator(commands.Cog):
             return await ctx.send(f"{ctx.author.mention}: That's not a number yo.. :skull:")
 
         await ctx.send(f"{ctx.author.mention}: Enter your operator!")
-        operator = await self.client.wait_for("message", check=check)
+
+        try:
+            operator = await self.client.wait_for("message", check=check, timeout=10.0)
+
+        except asyncio.TimeoutError:
+            return await ctx.send(f"{ctx.author.mention}: Fine.. don't enter your operator. :unamused:")
 
         if operator.content not in ("*", "/", "+", "-", "%", "^"):
             return await ctx.send(f"{ctx.author.mention}: That's not an operator yo.. :skull:")
 
         await ctx.send(f"{ctx.author.mention}: Enter your second number!")
-        number_2 = await self.client.wait_for("message", check=check)
+
+        try:
+            number_2 = await self.client.wait_for("message", check=check, timeout=10.0)
+
+        except asyncio.TimeoutError:
+            return await ctx.send(f"{ctx.author.mention}: Fine.. don't enter your second number. :unamused:")
 
         try:
             number_2 = int(number_2.content)
