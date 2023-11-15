@@ -20,7 +20,7 @@ Note: the bot may not always be active as I don't have a proper way of hosting i
 
 - foxAPI: [Repo][foxGitHubLink] | [Site][foxWebSiteLink]
 - dogAPI: [Repo][dogGitHubLink] | [Site][dogWebSiteLink]
-- quoteAPI/jokeAPI: [Repo][quotenJokeGitHubLink]
+- quoteAPI / jokeAPI: [Repo][quotenJokeGitHubLink]
 
 ## Commands
 
