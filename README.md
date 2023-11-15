@@ -10,11 +10,11 @@ This is a discord bot, created by Calm1403.
 [dogWebSiteLink]: https://dog.ceo/dog-api/
 [quotenJokeGitHubLink]: https://github.com/NotCookey/QuotenJoke-Api
 
-1. foxAPI: [Repo][foxGitHubLink] | [Site][foxWebSiteLink]
+- foxAPI: [Repo][foxGitHubLink] | [Site][foxWebSiteLink]
 
-2. dogAPI: [Repo][dogGitHubLink] | [Site][dogWebSiteLink]
+- dogAPI: [Repo][dogGitHubLink] | [Site][dogWebSiteLink]
 
-3. quoteAPI/jokeAPI: [Repo][quotenJokeGitHubLink]
+- quoteAPI/jokeAPI: [Repo][quotenJokeGitHubLink]
 
 ## Want to invite it to your server?
 
@@ -26,12 +26,12 @@ Note: the bot may not always be active as I don't have a proper way of hosting i
 
 ## Commands
 
-"$info / $help" - This asks CalmBot to say their avaliable commands and other information.  
-"$eight_ball / $8ball" - This asks CalmBot to say a yes or no response to a yes or no question.  
-"$ping / $latency" - This asks CalmBot to display their current latency.  
-"$calculator / $calc" - This asks CalmBot to assist you with simple math sums.  
-"$roll_dice / $dice" - This asks CalmBot to play a game of dice.  
-"$send_quote / $quote" - This asks CalmBot to say a quote.  
-"$send_joke / $joke" - This asks CalmBot to say a joke.  
-"$send_fox / $fox" - This asks CalmBot to display a cute fox.  
-"$send_dog / $dog" - This asks CalmBot to display a cute dog.
+- "$info / $help" - This asks CalmBot to say their avaliable commands and other information.
+- "$eight_ball / $8ball" - This asks CalmBot to say a yes or no response to a yes or no question.
+- "$ping / $latency" - This asks CalmBot to display their current latency.
+- "$calculator / $calc" - This asks CalmBot to assist you with simple math sums.
+- "$roll_dice / $dice" - This asks CalmBot to play a game of dice.
+- "$send_quote / $quote" - This asks CalmBot to say a quote.
+- "$send_joke / $joke" - This asks CalmBot to say a joke.
+- "$send_fox / $fox" - This asks CalmBot to display a cute fox.
+- "$send_dog / $dog" - This asks CalmBot to display a cute dog.
