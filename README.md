@@ -2,6 +2,14 @@
 
 This is a discord bot, created by Calm1403.
 
+## Want to invite it to your server?
+
+[inviteLink]: https://discord.com/api/oauth2/authorize?client_id=1141041960862367785&permissions=8&scope=bot
+
+[Here's the link!][inviteLink]
+
+Note: the bot may not always be active as I don't have a proper way of hosting it yet.
+
 ## APIs
 
 [foxGitHubLink]: https://github.com/xinitrc-dev/randomfox.ca
@@ -13,14 +21,6 @@ This is a discord bot, created by Calm1403.
 - foxAPI: [Repo][foxGitHubLink] | [Site][foxWebSiteLink]
 - dogAPI: [Repo][dogGitHubLink] | [Site][dogWebSiteLink]
 - quoteAPI/jokeAPI: [Repo][quotenJokeGitHubLink]
-
-## Want to invite it to your server?
-
-[inviteLink]: https://discord.com/api/oauth2/authorize?client_id=1141041960862367785&permissions=8&scope=bot
-
-[Here's the link!][inviteLink]
-
-Note: the bot may not always be active as I don't have a proper way of hosting it yet.
 
 ## Commands
 
