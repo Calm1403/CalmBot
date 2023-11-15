@@ -33,5 +33,5 @@ Note: the bot may not always be active as I don't have a proper way of hosting i
 "$roll_dice / $dice" - This asks CalmBot to play a game of dice.  
 "$send_quote / $quote" - This asks CalmBot to say a quote.  
 "$send_joke / $joke" - This asks CalmBot to say a joke.  
-"$send_fox / $fox" - This asks CalmBot to display a cute fox.
+"$send_fox / $fox" - This asks CalmBot to display a cute fox.  
 "$send_dog / $dog" - This asks CalmBot to disaply a cute dog.
