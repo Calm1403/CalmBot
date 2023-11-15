@@ -25,7 +25,7 @@ class info(commands.Cog):
         )
 
         embeded_message.add_field(
-            name="$info:", value="[Alias: $help] This asks CalmBot to say their avaliable commands and other information.", inline=False
+            name="$info:", value="[Alias: $help] This asks CalmBot to state their avaliable commands and other information.", inline=False
         )
 
         embeded_message.add_field(
@@ -33,11 +33,11 @@ class info(commands.Cog):
         )
 
         embeded_message.add_field(
-            name="$eight_ball:", value="[Alias: $8ball] This asks CalmBot to say a yes or no response to a yes or no question.", inline=False
+            name="$eight_ball:", value="[Alias: $8ball] This asks CalmBot to respond to a yes or no question with a yes or no response.", inline=False
         )
 
         embeded_message.add_field(
-            name="$ping:", value="[Alias: $latency] This asks CalmBot to say their current latency.", inline=False
+            name="$ping:", value="[Alias: $latency] This asks CalmBot to display their current latency.", inline=False
         )
 
         embeded_message.add_field(
@@ -49,7 +49,7 @@ class info(commands.Cog):
         )
 
         embeded_message.add_field(
-            name="$send_quote:", value="[Alias: $quote] This asks CalmBot to say a quote.", inline=False
+            name="$send_quote:", value="[Alias: $quote] This asks CalmBot to state a quote.", inline=False
         )
 
         embeded_message.add_field(
