@@ -26,7 +26,7 @@ Note: the bot may not always be active as I don't have a proper way of hosting i
 
 ## Commands
 
-"$info / $help" - This asks CalmBot to say their avaliable commands and other information.
+"$info / $help" - This asks CalmBot to say their avaliable commands and other information.  
 "$eight_ball / $8ball" - This asks CalmBot to say a yes or no response to a yes or no question.  
 "$ping / $latency" - This asks CalmBot to display their current latency.  
 "$calculator / $calc" - This asks CalmBot to assist you with simple math sums.  
