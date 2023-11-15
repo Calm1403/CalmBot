@@ -11,9 +11,7 @@ This is a discord bot, created by Calm1403.
 [quotenJokeGitHubLink]: https://github.com/NotCookey/QuotenJoke-Api
 
 - foxAPI: [Repo][foxGitHubLink] | [Site][foxWebSiteLink]
-
 - dogAPI: [Repo][dogGitHubLink] | [Site][dogWebSiteLink]
-
 - quoteAPI/jokeAPI: [Repo][quotenJokeGitHubLink]
 
 ## Want to invite it to your server?
@@ -27,6 +25,7 @@ Note: the bot may not always be active as I don't have a proper way of hosting i
 ## Commands
 
 - $info / $help - This asks CalmBot to state their avaliable commands and other information.
+- $hello / $hi - This allows you to greet CalmBot to which they'll reply with a (most of the time :shrug:) friendly greeting.
 - $eight_ball / $8ball - This asks CalmBot to respond to a yes or no question with a yes or no response.
 - $ping / $latency - This asks CalmBot to display their current latency.
 - $calculator / $calc - This asks CalmBot to assist you with simple math sums.
