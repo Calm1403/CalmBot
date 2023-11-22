@@ -34,3 +34,4 @@ Note: the bot may not always be active as I don't have a proper way of hosting i
 - $send_joke / $joke - This asks CalmBot to tell a joke.
 - $send_fox / $fox - This asks CalmBot to display a cute fox.
 - $send_dog / $dog - This asks CalmBot to display a cute dog.
+- $send_meme / $meme - This asks CalmBot to display a funny.
