@@ -64,6 +64,10 @@ class info(commands.Cog):
             name="$send_dog:", value="[Aliases: $dog] This asks CalmBot to display a cute dog.", inline=False
         )
 
+        embeded_message.add_field(
+            name="$send_meme:", value="[Aliases: $dmeme] This asks CalmBot to display a funny.", inline=False
+        )
+
         await ctx.send(f"{ctx.author.mention}: Here you are!", embed=embeded_message)
 
 
