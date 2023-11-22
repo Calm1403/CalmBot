@@ -17,10 +17,12 @@ Note: the bot may not always be active as I don't have a proper way of hosting i
 [dogGitHubLink]: https://github.com/ElliottLandsborough/dog-ceo-api
 [dogWebSiteLink]: https://dog.ceo/dog-api/
 [quotenJokeGitHubLink]: https://github.com/NotCookey/QuotenJoke-Api
+[memeGitHubLink]: https://github.com/D3vd/Meme_Api
 
 - foxAPI: [Repo][foxGitHubLink] | [Site][foxWebSiteLink]
 - dogAPI: [Repo][dogGitHubLink] | [Site][dogWebSiteLink]
 - quoteAPI / jokeAPI: [Repo][quotenJokeGitHubLink]
+- memeAPI: [Repo][memeGitHubLink]
 
 ## Commands
 
