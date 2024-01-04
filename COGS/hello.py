@@ -5,6 +5,7 @@ import random
 
 
 class hello(commands.Cog):
+
     def __init__(self, client):
         self.client = client
 
@@ -15,14 +16,13 @@ class hello(commands.Cog):
         )
 
     @commands.command(aliases=["hi"])
-    # This decorator will intake a function to be used as a discord command.
     async def hello(self, ctx):
-        # This command will display a friendly greeting.
         with open("Python/BOT/COGS/greetings.txt") as random_greetings_file:
             random_greeting = random.choice(random_greetings_file.readlines())
 
         if random_greeting[len(random_greeting) - 1] == "\n":
-            return await ctx.send(f"{ctx.author.mention}: {random_greeting[:-1]}")
+            return await ctx.send(
+                f"{ctx.author.mention}: {random_greeting[:-1]}")
 
         await ctx.send(f"{ctx.author.mention}: {random_greeting}")
 
