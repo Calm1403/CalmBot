@@ -5,6 +5,7 @@ import discord
 
 
 class dog(commands.Cog):
+
     def __init__(self, client):
         self.client = client
 
@@ -16,20 +17,24 @@ class dog(commands.Cog):
 
     @commands.command(aliases=["dog"])
     async def send_dog(self, ctx):
-        # This command will send a picture of a dog.
 
         async with aiohttp.ClientSession() as session:
             try:
-                async with session.get("https://dog.ceo/api/breeds/image/random") as request:
+                async with session.get(
+                        "https://dog.ceo/api/breeds/image/random") as request:
                     dog_to_be_sent = await request.json()
 
-                await ctx.send(f"{ctx.author.mention}: Here you are! {dog_to_be_sent['message']}")
+                await ctx.send(
+                    f"{ctx.author.mention}: Here you are! {dog_to_be_sent['message']}"
+                )
 
             except:
                 print(
                     f"[{F.YELLOW}API{F.RESET}] {F.RED}Error{F.RESET} with request: {request.status} | {request.url}"
                 )
-                await ctx.send(f"{ctx.author.mention}: Sorry, there was a problem with the request..")
+                await ctx.send(
+                    f"{ctx.author.mention}: Sorry, there was a problem with the request.."
+                )
 
 
 async def setup(client):

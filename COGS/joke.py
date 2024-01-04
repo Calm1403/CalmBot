@@ -5,6 +5,7 @@ import discord
 
 
 class joke(commands.Cog):
+
     def __init__(self, client):
         self.client = client
 
@@ -16,20 +17,23 @@ class joke(commands.Cog):
 
     @commands.command(aliases=["joke"])
     async def send_joke(self, ctx):
-        # This command will send a joke.
 
         async with aiohttp.ClientSession() as session:
             try:
-                async with session.get("https://quotenjoke.onrender.com/joke") as request:
+                async with session.get(
+                        "https://quotenjoke.onrender.com/joke") as request:
                     joke_to_be_sent = await request.json()
 
-                await ctx.send(f"{ctx.author.mention}: {joke_to_be_sent['joke']}")
+                await ctx.send(
+                    f"{ctx.author.mention}: {joke_to_be_sent['joke']}")
 
             except:
                 print(
                     f"[{F.YELLOW}API{F.RESET}] {F.RED}Error{F.RESET} with request: {request.status} | {request.url}"
                 )
-                await ctx.send(f"{ctx.author.mention}: Sorry, there was a problem with the request..")
+                await ctx.send(
+                    f"{ctx.author.mention}: Sorry, there was a problem with the request.."
+                )
 
 
 async def setup(client):
