@@ -6,6 +6,7 @@ import random
 
 
 class dice(commands.Cog):
+
     def __init__(self, client):
         self.client = client
 
@@ -17,40 +18,49 @@ class dice(commands.Cog):
 
     @commands.command(aliases=["dice"])
     async def roll_dice(self, ctx):
-        # This command will ask the user for a number
-        # between one and six, generate a random number, and
-        # evalutate whether or not the number guessed is equal to the
-        # number generated.
         integer_to_guess = random.randint(1, 6)
 
         def check(m):
             return m.author == ctx.author
 
-        await ctx.send(f"{ctx.author.mention}: Alright, I'm gonna roll the dice; bet a number between one and six! :smile:")
+        await ctx.send(
+            f"{ctx.author.mention}: Alright, I'm gonna roll the dice; bet a number between one and six! :smile:"
+        )
 
         try:
-            guess = await self.client.wait_for("message", check=check, timeout=10.0)
+            guess = await self.client.wait_for("message",
+                                               check=check,
+                                               timeout=10.0)
 
         except asyncio.TimeoutError:
-            return await ctx.send(f"{ctx.author.mention}: Why did you ask to play a game of dice if you weren't going to play? :unamused:")
+            return await ctx.send(
+                f"{ctx.author.mention}: Why did you ask to play a game of dice if you weren't going to play? :unamused:"
+            )
 
         try:
             guess = int(guess.content)
 
         except:
-            return await ctx.send(f"{ctx.author.mention}: That's not a number yo.. :skull:")
+            return await ctx.send(
+                f"{ctx.author.mention}: That's not a number yo.. :skull:")
 
         if guess == integer_to_guess:
-            await ctx.send(f"{ctx.author.mention}: You win! The dice landed on {guess}!")
+            await ctx.send(
+                f"{ctx.author.mention}: You win! The dice landed on {guess}!")
 
         elif guess > 6:
-            await ctx.send(f"{ctx.author.mention}: It's a six sided die.. :skull:")
+            await ctx.send(
+                f"{ctx.author.mention}: It's a six sided die.. :skull:")
 
         elif guess < 1:
-            await ctx.send(f"{ctx.author.mention}: But it can't.. it can't.. what? :skull:")
+            await ctx.send(
+                f"{ctx.author.mention}: But it can't.. it can't.. what? :skull:"
+            )
 
         else:
-            await ctx.send(f"{ctx.author.mention}: You lose! The dice landed on {integer_to_guess}!")
+            await ctx.send(
+                f"{ctx.author.mention}: You lose! The dice landed on {integer_to_guess}!"
+            )
 
 
 async def setup(client):
