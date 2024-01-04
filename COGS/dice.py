@@ -44,22 +44,21 @@ class dice(commands.Cog):
                 f"{ctx.author.mention}: That's not a number yo.. :skull:")
 
         if guess == integer_to_guess:
-            await ctx.send(
+            return await ctx.send(
                 f"{ctx.author.mention}: You win! The dice landed on {guess}!")
 
-        elif guess > 6:
-            await ctx.send(
+        if guess > 6:
+            return await ctx.send(
                 f"{ctx.author.mention}: It's a six sided die.. :skull:")
 
-        elif guess < 1:
-            await ctx.send(
+        if guess < 1:
+            return await ctx.send(
                 f"{ctx.author.mention}: But it can't.. it can't.. what? :skull:"
             )
 
-        else:
-            await ctx.send(
-                f"{ctx.author.mention}: You lose! The dice landed on {integer_to_guess}!"
-            )
+        await ctx.send(
+            f"{ctx.author.mention}: You lose! The dice landed on {integer_to_guess}!"
+        )
 
 
 async def setup(client):
