@@ -1,7 +1,6 @@
 from discord.ext import commands
 from colorama import Fore as F
 import aiohttp
-import discord
 
 
 class joke(commands.Cog):
