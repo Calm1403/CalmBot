@@ -42,12 +42,13 @@ async def main():
         await client.start(token)
 
 
-try:
-    asyncio.run(main())
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
 
-except KeyboardInterrupt:
-    os.system("clear")
+    except KeyboardInterrupt:
+        os.system("clear")
 
-    print(
-        f"[{F.LIGHTMAGENTA_EX}BOT{F.RESET}] The CalmBot has been {F.RED}shutdown{F.RESET}!"
-    )
+        print(
+            f"[{F.LIGHTMAGENTA_EX}BOT{F.RESET}] The CalmBot has been {F.RED}shutdown{F.RESET}!"
+        )
