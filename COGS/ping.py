@@ -16,7 +16,7 @@ class ping(commands.Cog):
     @commands.command(aliases=["latency"])
     async def ping(self, ctx):
         await ctx.send(
-            f"{ctx.author.mention}: My latency is {int(self.client.latency * 1000)}ms."
+            f"{ctx.author.mention}: My latency is {int(self.client.latency * 1000)}ms!"
         )
 
 
