@@ -1,5 +1,7 @@
 # CalmBot
 
+![profile](BOT/docs/assets/profile.png)
+
 This is a discord bot, created by Calm1403.
 
 ## Want to invite it to your server?
