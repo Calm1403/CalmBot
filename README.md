@@ -1,6 +1,6 @@
 # CalmBot
 
-![profile](BOT/docs/assets/profile.png)
+![profile](/Python/BOT/docs/assets/profile.png)
 
 This is a discord bot, created by Calm1403.
 
