@@ -1,6 +1,6 @@
 # CalmBot
 
-![profile](https://cdn.discordapp.com/app-icons/1141041960862367785/9ce1206a86ac852ef1c74168e7f1e87d.png?size=256)
+![profile](https://cdn.discordapp.com/app-icons/1141041960862367785/61aee3162a54f86fbae5b6be1ff38ee3.png?size=256)
 
 This is a discord bot, created by Calm1403.
 
