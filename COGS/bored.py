@@ -24,7 +24,7 @@ class bored(commands.Cog):
                     task_to_be_sent = await request.json()
 
                 await ctx.send(
-                    f"{ctx.author.mention}: {task_to_be_sent['activity']}!"
+                    f"{ctx.author.mention}: {task_to_be_sent['activity']}! :smile:"
                 )
 
             except:
