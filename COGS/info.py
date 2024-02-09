@@ -76,7 +76,7 @@ class info(commands.Cog):
 
         embeded_message.add_field(
             name="$send_meme:",
-            value="[Aliases: $dmeme] This asks CalmBot to display a funny.",
+            value="[Aliases: $meme] This asks CalmBot to display a funny.",
             inline=False)
 
         embeded_message.add_field(
