@@ -19,40 +19,34 @@ class info(commands.Cog):
 
         embeded_message = discord.Embed(
             title="About CalmBot:",
-            description=
-            "This message will give you all of the information regarding CalmBot!",
+            description="This message will give you all of the information regarding CalmBot!",
             colour=discord.Colour.dark_gray())
 
         embeded_message.set_thumbnail(url=self.client.user.avatar.url)
 
         embeded_message.add_field(
             name="$info:",
-            value=
-            "[Alias: $help] This asks CalmBot to state their avaliable commands and other information.",
+            value="[Alias: $help] This asks CalmBot to state their avaliable commands and other information.",
             inline=False)
 
         embeded_message.add_field(
             name="$hello:",
-            value=
-            "[Alias: $hi] This allows you to greet CalmBot to which they'll reply with a (most of the time :shrug:) friendly greeting.",
+            value="[Alias: $hi] This allows you to greet CalmBot to which they'll reply with a (most of the time :shrug:) friendly greeting.",
             inline=False)
 
         embeded_message.add_field(
             name="$eight_ball:",
-            value=
-            "[Alias: $8ball] This asks CalmBot to respond to a yes or no question with a yes or no response.",
+            value="[Alias: $8ball] This asks CalmBot to respond to a yes or no question with a yes or no response.",
             inline=False)
 
         embeded_message.add_field(
             name="$ping:",
-            value=
-            "[Alias: $latency] This asks CalmBot to display their current latency.",
+            value="[Alias: $latency] This asks CalmBot to display their current latency.",
             inline=False)
 
         embeded_message.add_field(
             name="$calculator:",
-            value=
-            "[Alias: $calc] This asks CalmBot to assist you with simple math sums.",
+            value="[Alias: $calc] This asks CalmBot to assist you with simple math sums.",
             inline=False)
 
         embeded_message.add_field(
@@ -83,6 +77,11 @@ class info(commands.Cog):
         embeded_message.add_field(
             name="$send_meme:",
             value="[Aliases: $dmeme] This asks CalmBot to display a funny.",
+            inline=False)
+
+        embeded_message.add_field(
+            name="$bored:",
+            value="[Aliases: $boredom] This asks CalmBot to give you a task to Fulfill.",
             inline=False)
 
         await ctx.send(f"{ctx.author.mention}: Here you are!",
