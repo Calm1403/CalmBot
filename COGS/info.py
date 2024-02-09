@@ -81,7 +81,7 @@ class info(commands.Cog):
 
         embeded_message.add_field(
             name="$bored:",
-            value="[Aliases: $boredom] This asks CalmBot to give you a task to Fulfill.",
+            value="[Aliases: $boredom] This asks CalmBot to give you a task to fulfill.",
             inline=False)
 
         await ctx.send(f"{ctx.author.mention}: Here you are!",
