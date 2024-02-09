@@ -18,11 +18,14 @@ Note: the bot may not always be active as I don't have a proper way of hosting i
 [foxWebSiteLink]: https://randomfox.ca/
 [dogGitHubLink]: https://github.com/ElliottLandsborough/dog-ceo-api
 [dogWebSiteLink]: https://dog.ceo/dog-api/
+[boredGitHubLink]: https://github.com/drewthoennes/Bored-API
+[boredWebSiteLink]: https://www.boredapi.com/
 [quotenJokeGitHubLink]: https://github.com/NotCookey/QuotenJoke-Api
 [memeGitHubLink]: https://github.com/D3vd/Meme_Api
 
 - foxAPI: [Repo][foxGitHubLink] | [Site][foxWebSiteLink]
 - dogAPI: [Repo][dogGitHubLink] | [Site][dogWebSiteLink]
+- boredAPI: [Repo][boredGitHubLink] | [Site][boredWebSiteLink]
 - quoteAPI / jokeAPI: [Repo][quotenJokeGitHubLink]
 - memeAPI: [Repo][memeGitHubLink]
 
@@ -39,3 +42,4 @@ Note: the bot may not always be active as I don't have a proper way of hosting i
 - $send_fox / $fox - This asks CalmBot to display a cute fox.
 - $send_dog / $dog - This asks CalmBot to display a cute dog.
 - $send_meme / $meme - This asks CalmBot to display a funny.
+- $boredom / $bored - This asks CalmBot to give you a task to fulfill.
