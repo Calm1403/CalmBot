@@ -27,9 +27,9 @@ class fox(commands.Cog):
                     f"{ctx.author.mention}: Here you are! {fox_to_be_sent['image']}"
                 )
 
-            except:
+            except Exception as e:
                 print(
-                    f"[{F.YELLOW}API{F.RESET}] {F.RED}Error{F.RESET} with request: {request.status} | {request.url}"
+                    f"[{F.YELLOW}API{F.RESET}] {F.RED}Error{F.RESET} with request: {request.status} | {request.url} | {e}"
                 )
                 await ctx.send(
                     f"{ctx.author.mention}: Sorry, there was a problem with the request.."
