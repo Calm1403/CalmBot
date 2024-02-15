@@ -35,7 +35,7 @@ class calculator(commands.Cog):
         try:
             number_1 = int(number_1.content)
 
-        except:
+        except TypeError:
             return await ctx.send(
                 f"{ctx.author.mention}: That's not a number yo.. :skull:")
 
@@ -70,7 +70,7 @@ class calculator(commands.Cog):
         try:
             number_2 = int(number_2.content)
 
-        except:
+        except TypeError:
             return await ctx.send(
                 f"{ctx.author.mention}: That's not a number yo.. :skull:")
 
@@ -102,7 +102,7 @@ class calculator(commands.Cog):
         try:
             output = number_1 / number_2
 
-        except:
+        except ZeroDivisionError:
             return await ctx.send(
                 f"{ctx.author.mention}: I can't really divide {number_1} by {number_2} can I now?"
             )
