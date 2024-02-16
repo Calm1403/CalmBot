@@ -39,7 +39,7 @@ class dice(commands.Cog):
         try:
             guess = int(guess.content)
 
-        except:
+        except TypeError:
             return await ctx.send(
                 f"{ctx.author.mention}: That's not a number yo.. :skull:")
 
