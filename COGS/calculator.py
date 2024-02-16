@@ -46,14 +46,14 @@ class calculator(commands.Cog):
                                                   check=check,
                                                   timeout=10.0)
 
+            if operator.content not in ("*", "/", "+", "-", "%", "^"):
+                return await ctx.send(
+                    f"{ctx.author.mention}: That's not an operator yo.. :skull:")
+
         except asyncio.TimeoutError:
             return await ctx.send(
                 f"{ctx.author.mention}: Fine.. don't enter your operator. :unamused:"
             )
-
-        if operator.content not in ("*", "/", "+", "-", "%", "^"):
-            return await ctx.send(
-                f"{ctx.author.mention}: That's not an operator yo.. :skull:")
 
         await ctx.send(f"{ctx.author.mention}: Enter your second number!")
 
