@@ -95,6 +95,7 @@ class calculator(commands.Cog):
                 f"{ctx.author.mention}: {number_1} % {number_2} = {output}")
 
         if operator.content == "^":
+            # I Don't like this method of calculation, but fuck it; I'm using it any way. (can't be bothered implementing a tokeniser right now.)
             output = number_1 ^ number_2
             return await ctx.send(
                 f"{ctx.author.mention}: {number_1} ^ {number_2} = {output}")
