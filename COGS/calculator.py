@@ -104,7 +104,7 @@ class calculator(commands.Cog):
             return await ctx.send(
                 f"{ctx.author.mention}: Fine.. don't give me an expression. :unamused:")
 
-        await ctx.send(tokeniser(expression).calculate())
+        await ctx.send(f"{ctx.author.mention}: {tokeniser(expression).calculate()}")
 
 
 async def setup(client):
