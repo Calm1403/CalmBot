@@ -93,6 +93,8 @@ class calculator(commands.Cog):
         def check(m):
             return m.author.mention == ctx.author
 
+        await ctx.send(f"{ctx.author.mention}: Hey! Give me an expression! :smile:")
+
         try:
             expression = await self.client.wait_for("message",
                                                     check=check,
