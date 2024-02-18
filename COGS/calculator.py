@@ -46,7 +46,7 @@ class tokeniser(object):
 
         raise Exception(f"I'm not sure if {self.text} is a valid way of constructing an expression.. keep it to something like \"3+3\" please.")
 
-    def calculation(self):
+    def calculate(self):
         self.move_and_assert_type(NONE, NONE)
 
         left = self.current_token
@@ -89,7 +89,20 @@ class calculator(commands.Cog):
 
     @commands.command(aliases=["calc"])
     async def calculator(self, ctx):
-        ctx.send(f"{ctx.author.mention}: Hey! Give me an expression!")
+
+        def check(m):
+            return m.author.mention == ctx.author
+
+        try:
+            expression = await self.client.wait_for("message",
+                                                    check=check,
+                                                    timeout=10.0)
+
+        except asyncio.TimeoutError:
+            return await ctx.send(
+                f"{ctx.author.mention}: Fine.. don't give me an expression. :unamused:")
+
+        await ctx.send(tokeniser(expression).calculate())
 
 
 async def setup(client):
