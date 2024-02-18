@@ -100,9 +100,7 @@ class calculator(commands.Cog):
                                                     check=check,
                                                     timeout=10.0)
 
-            await ctx.send(expression)
-
-            await ctx.send(f"{ctx.author.mention}: {tokeniser(expression).calculate()}")
+            await ctx.send(f"{ctx.author.mention}: {tokeniser(expression.content).calculate()}")
 
         except asyncio.TimeoutError:
             return await ctx.send(
