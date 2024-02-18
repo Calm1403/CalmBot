@@ -38,6 +38,43 @@ class tokeniser(object):
             self.current_pos += 1
             return token(OPPERATOR, current_char)
 
+        raise Exception(f"I don't think {current_char} is a valid term in an expression..")
+
+    def move_and_assert_type(self, spes_type):
+        if self.current_token.type == spes_type:
+            self.current_token = self.get_next_token()
+
+        raise Exception(f"I'm not sure if {self.text} is a valid way of constructing an expression.. keep it to something like \"3+3\" please.")
+
+    def calculation(self):
+        self.move_and_assert_type(NONE, NONE)
+
+        left = self.current_token
+        self.move_and_assert_type(LITTERAL)
+
+        middle = self.current_token
+        self.move_and_assert_type(OPPERATOR)
+
+        right = self.current_token
+        self.move_and_assert_type(LITTERAL)
+
+        if middle == "+":
+            return f"The answer to \"{self.text}\" is {left + right}"
+
+        if middle == "-":
+            return f"The answer to \"{self.text}\" is {left - right}"
+
+        if middle == "/":
+            return f"The answer to \"{self.text}\" is {left / right}"
+
+        if middle == "^":
+            return f"The answer to \"{self.text}\" is {left ^ right}"
+
+        if middle == "%":
+            return f"The answer to \"{self.text}\" is {left % right}"
+
+        return f"The answer to \"{self.text}\" is {left * right}"
+
 
 class calculator(commands.Cog):
 
@@ -52,7 +89,7 @@ class calculator(commands.Cog):
 
     @commands.command(aliases=["calc"])
     async def calculator(self, ctx):
-        pass
+        ctx.send(f"{ctx.author.mention}: Hey! Give me an expression!")
 
 
 async def setup(client):
