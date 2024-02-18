@@ -91,7 +91,7 @@ class calculator(commands.Cog):
     async def calculator(self, ctx):
 
         def check(m):
-            return m.author.mention == ctx.author
+            return m.author == ctx.author
 
         await ctx.send(f"{ctx.author.mention}: Hey! Give me an expression! :smile:")
 
