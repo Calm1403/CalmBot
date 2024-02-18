@@ -1,6 +1,42 @@
 from discord.ext import commands
 from colorama import Fore as F
+import string
 import asyncio
+
+EOF, NONE, OPPERATOR, LITTERAL = "EOF", "NONE", "OPPERATOR", "LITTERAL"
+
+
+class token(object):
+    def __init__(self, type, data):
+        self.type = type
+        self.data = data
+
+
+class tokeniser(object):
+    potentuals = ("%", "^", "+", "/", "*", "-")
+
+    def __init__(self, text):
+        if text > 3:
+            # I'll catch this and display the output.
+            raise Exception("That expression is too long.. keep it to around three characters please.")
+
+        self.text = text
+        self.current_pos = 0
+        self.current_token = token(NONE, NONE)
+
+    def get_next_token(self):
+        if self.current_pos > len(self.text) - 1:
+            return token(EOF, NONE)
+
+        current_char = self.text[self.current_pos]
+
+        if current_char in string.digits:
+            self.current_pos += 1
+            return token(LITTERAL, current_char)
+
+        if current_char in tokeniser.potentuals:
+            self.current_pos += 1
+            return token(OPPERATOR, current_char)
 
 
 class calculator(commands.Cog):
@@ -16,100 +52,7 @@ class calculator(commands.Cog):
 
     @commands.command(aliases=["calc"])
     async def calculator(self, ctx):
-
-        def check(m):
-            return m.author == ctx.author
-
-        await ctx.send(f"{ctx.author.mention}: Enter your first number!")
-
-        try:
-            number_1 = await self.client.wait_for("message",
-                                                  check=check,
-                                                  timeout=10.0)
-
-        except asyncio.TimeoutError:
-            return await ctx.send(
-                f"{ctx.author.mention}: Fine.. don't enter your first number. :unamused:"
-            )
-
-        try:
-            number_1 = int(number_1.content)
-
-        except TypeError:
-            return await ctx.send(
-                f"{ctx.author.mention}: That's not a number yo.. :skull:")
-
-        await ctx.send(f"{ctx.author.mention}: Enter your operator!")
-
-        try:
-            operator = await self.client.wait_for("message",
-                                                  check=check,
-                                                  timeout=10.0)
-
-            if operator.content not in ("*", "/", "+", "-", "%", "^"):
-                return await ctx.send(
-                    f"{ctx.author.mention}: That's not an operator yo.. :skull:")
-
-        except asyncio.TimeoutError:
-            return await ctx.send(
-                f"{ctx.author.mention}: Fine.. don't enter your operator. :unamused:"
-            )
-
-        await ctx.send(f"{ctx.author.mention}: Enter your second number!")
-
-        try:
-            number_2 = await self.client.wait_for("message",
-                                                  check=check,
-                                                  timeout=10.0)
-
-        except asyncio.TimeoutError:
-            return await ctx.send(
-                f"{ctx.author.mention}: Fine.. don't enter your second number. :unamused:"
-            )
-
-        try:
-            number_2 = int(number_2.content)
-
-        except TypeError:
-            return await ctx.send(
-                f"{ctx.author.mention}: That's not a number yo.. :skull:")
-
-        if operator.content == "*":
-            output = number_1 * number_2
-            return await ctx.send(
-                f"{ctx.author.mention}: {number_1} * {number_2} = {output}")
-
-        if operator.content == "+":
-            output = number_1 + number_2
-            return await ctx.send(
-                f"{ctx.author.mention}: {number_1} + {number_2} = {output}")
-
-        if operator.content == "-":
-            output = number_1 - number_2
-            return await ctx.send(
-                f"{ctx.author.mention}: {number_1} - {number_2} = {output}")
-
-        if operator.content == "%":
-            output = number_1 % number_2
-            return await ctx.send(
-                f"{ctx.author.mention}: {number_1} % {number_2} = {output}")
-
-        if operator.content == "^":
-            # I Don't like this method of calculation, but fuck it; I'm using it any way. (can't be bothered implementing a tokeniser right now.)
-            output = number_1 ^ number_2
-            return await ctx.send(
-                f"{ctx.author.mention}: {number_1} ^ {number_2} = {output}")
-
-        try:
-            output = number_1 / number_2
-
-        except ZeroDivisionError:
-            return await ctx.send(
-                f"{ctx.author.mention}: I can't really divide {number_1} by {number_2} can I now?"
-            )
-
-        await ctx.send(
-            f"{ctx.author.mention}: {number_1} / {number_2} = {output}")
+        pass
 
 
 async def setup(client):
