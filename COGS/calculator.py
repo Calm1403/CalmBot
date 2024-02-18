@@ -16,7 +16,7 @@ class tokeniser(object):
     potentuals = ("%", "^", "+", "/", "*", "-")
 
     def __init__(self, text):
-        if text > 3:
+        if len(text) > 3:
             # I'll catch this and display the output.
             raise Exception("That expression is too long.. keep it to around three characters please.")
 
