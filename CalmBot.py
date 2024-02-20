@@ -8,6 +8,8 @@ client = commands.Bot(command_prefix="$",
                       intents=discord.Intents.all(),
                       help_command=None)
 
+# Testing.
+
 
 @client.event
 async def on_ready():
