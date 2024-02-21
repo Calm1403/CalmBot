@@ -17,6 +17,13 @@ async def on_ready():
         f"[{F.LIGHTMAGENTA_EX}BOT{F.RESET}] The CalmBot has {F.GREEN}connected{F.RESET} to discord!"
     )
 
+    print(
+        f"[{F.LIGHTCYAN_EX}GUILD{F.RESET}] The CalmBot is {F.GREEN}active{F.RESET} in {len(client.guilds)} guilds:"
+    )
+
+    for guild in client.guilds:
+        print(f"[{F.LIGHTCYAN_EX}GUILD{F.RESET}] {guild}")
+
 
 async def load():
     for filename in os.listdir("Python/BOT/COGS"):
