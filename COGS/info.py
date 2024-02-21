@@ -45,11 +45,6 @@ class info(commands.Cog):
             inline=False)
 
         embeded_message.add_field(
-            name="$calculator:",
-            value="[Alias: $calc] This asks CalmBot to assist you with simple math sums.",
-            inline=False)
-
-        embeded_message.add_field(
             name="$roll_dice:",
             value="[Alias: $dice] This asks CalmBot to play a game of dice.",
             inline=False)
