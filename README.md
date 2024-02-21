@@ -35,7 +35,6 @@ Note: the bot may not always be active as I don't have a proper way of hosting i
 - $hello / $hi - This allows you to greet CalmBot to which they'll reply with a (most of the time :shrug:) friendly greeting.
 - $eight_ball / $8ball - This asks CalmBot to respond to a yes or no question with a yes or no response.
 - $ping / $latency - This asks CalmBot to display their current latency.
-- $calculator / $calc - This asks CalmBot to assist you with simple math sums.
 - $roll_dice / $dice - This asks CalmBot to play a game of dice.
 - $send_quote / $quote - This asks CalmBot to state a quote.
 - $send_joke / $joke - This asks CalmBot to tell a joke.
