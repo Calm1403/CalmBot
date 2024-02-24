@@ -12,7 +12,7 @@ This is a discord bot, created by Calm1403.
 
 Note: the bot may not always be active as I don't have a proper way of hosting it yet.
 
-## APIs
+## APIs:
 
 [foxGitHubLink]: https://github.com/xinitrc-dev/randomfox.ca
 [foxWebSiteLink]: https://randomfox.ca/
@@ -29,7 +29,7 @@ Note: the bot may not always be active as I don't have a proper way of hosting i
 - quoteAPI / jokeAPI: [Repo][quotenJokeGitHubLink]
 - memeAPI: [Repo][memeGitHubLink]
 
-## Commands
+## Commands:
 
 - $info / $help - This asks CalmBot to state their avaliable commands and other information.
 - $hello / $hi - This allows you to greet CalmBot to which they'll reply with a (most of the time :shrug:) friendly greeting.
