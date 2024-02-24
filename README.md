@@ -52,4 +52,4 @@ but when I asked some people if they'd prefer that: a majority said
 they prefer the prefix, so consequently for the time being I'll stick
 to the old prefix commands, but that may change in the future if
 discord decides to completely remove them or if
-people are really desperate for them and I can be bothered to re-write each file.
+people really want them and I can be bothered to re-write each file.
