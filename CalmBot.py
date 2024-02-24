@@ -18,11 +18,8 @@ async def on_ready():
     )
 
     print(
-        f"[{F.LIGHTCYAN_EX}GUILD{F.RESET}] The CalmBot is {F.GREEN}active{F.RESET} in {len(client.guilds)} guilds:"
+        f"[{F.LIGHTCYAN_EX}GUILD{F.RESET}] The CalmBot is {F.GREEN}active{F.RESET} in {len(client.guilds)} guilds!"
     )
-
-    for guild in client.guilds:
-        print(f"[{F.LIGHTCYAN_EX}GUILD{F.RESET}] {guild}")
 
 
 async def load():
