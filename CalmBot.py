@@ -18,7 +18,7 @@ async def on_ready():
     )
 
     print(
-        f"[{F.LIGHTCYAN_EX}GUILD{F.RESET}] The CalmBot is {F.GREEN}active{F.RESET} in {len(client.guilds)} guilds!"
+        f"[{F.LIGHTCYAN_EX}GUILDS{F.RESET}] The CalmBot is {F.GREEN}active{F.RESET} in {len(client.guilds)} guilds!"
     )
 
 
