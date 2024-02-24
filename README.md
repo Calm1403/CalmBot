@@ -42,3 +42,14 @@ Note: the bot may not always be active as I don't have a proper way of hosting i
 - $send_dog / $dog - This asks CalmBot to display a cute dog.
 - $send_meme / $meme - This asks CalmBot to display a funny.
 - $boredom / $bored - This asks CalmBot to give you a task to fulfill.
+
+## Note:
+
+The bot currently uses the prefix "$" to instantiate commands.
+I may update the bot to use the newer "slash" commands that
+provide the user with a graphical interface for the bot's commands,
+but when I asked some people if they'd prefer that: a majority said
+they prefer the prefix, so consequently for the time being I'll stick
+to the old prefix commands, but that may change in the future if
+discord decides to completely remove them or if
+people are really desperate for them and I can be bothered to re-write each file.
