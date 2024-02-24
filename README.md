@@ -10,8 +10,6 @@ This is a discord bot, created by Calm1403.
 
 [Here's the link!][inviteLink]
 
-Note: the bot may not always be active as I don't have a proper way of hosting it yet.
-
 ## APIs:
 
 [foxGitHubLink]: https://github.com/xinitrc-dev/randomfox.ca
@@ -43,7 +41,7 @@ Note: the bot may not always be active as I don't have a proper way of hosting i
 - $send_meme / $meme - This asks CalmBot to display a funny.
 - $boredom / $bored - This asks CalmBot to give you a task to fulfill.
 
-## Note:
+## Notes:
 
 The bot currently uses the prefix "$" to instantiate commands.
 I may update the bot to use the newer "slash" commands that
@@ -53,3 +51,7 @@ they prefer the prefix, so consequently for the time being I'll stick
 to the old prefix commands, but that may change in the future if
 discord decides to completely remove them or if
 people really want them and I can be bothered to re-write each file.
+
+The bot also may not always be active seeing as I don't currently have an 
+effective way of hosting it yet. I may in future rent a server or just
+build a really crappy one if I can get around to it.
